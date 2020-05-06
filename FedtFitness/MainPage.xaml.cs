@@ -26,5 +26,15 @@ namespace FedtFitness
         {
             this.InitializeComponent();
         }
+
+        private void Hamburgermenu_OnClick(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void IconsListbox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
