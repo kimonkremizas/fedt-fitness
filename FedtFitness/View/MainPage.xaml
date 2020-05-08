@@ -19,7 +19,7 @@
         <RelativePanel Name="TopPanel" HorizontalAlignment ="Left" Width="1920">
             <Button x:Name="Hamburgermenu" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" 
                     FontSize="24" Click="Hamburgermenu_OnClick" Height="56" Width="60"/>
-            <TextBlock Name="Title" RelativePanel.RightOf="Hamburgermenu" FontSize="24" 
+            <TextBlock Name="Title" RelativePanel.Below="Hamburgermenu" FontSize="24" 
                        FontWeight="Bold" Margin="65,12,0,0"  />
         </RelativePanel>
 
