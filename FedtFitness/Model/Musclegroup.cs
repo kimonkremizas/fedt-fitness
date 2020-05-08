@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace FedtFitness.Model
 {
-    class Musclegroup
+    class MuscleGroup
     {
         public int Muscle_id { get; set; }
         public  string Type { get; set; }
         public string Name { get; set; }
 
-        public Musclegroup(int muscleId, string type, string name)
+        public MuscleGroup(int muscleId, string type, string name)
         {
             Muscle_id = muscleId;
             Type = type;

@@ -9,12 +9,12 @@ namespace FedtFitness.Model
 {
     class MuscleGroupCatalogSingleton
     {
-        public ObservableCollection<Musclegroup> Musclegroups { get; set; }
+        public ObservableCollection<MuscleGroup> MuscleGroups { get; set; }
         private static MuscleGroupCatalogSingleton _instance;
 
         private MuscleGroupCatalogSingleton()
         {
-            Musclegroups = new ObservableCollection<Musclegroup>();
+            MuscleGroups = new ObservableCollection<MuscleGroup>();
         }
 
         public static MuscleGroupCatalogSingleton Instance
