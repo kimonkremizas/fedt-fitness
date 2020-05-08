@@ -16,8 +16,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" Grid.Column="1">
-            <TextBlock Text="Select muscle group:" FontSize="30" Height="50" Width="298" Margin="0,100,0,0"/>
-            <DropDownButton Content="" Height="41" Width="288" Margin="90,0,0,0">
+            <TextBlock Text="Select muscle group:" FontSize="30" Height="50" HorizontalAlignment="Center" Margin="0,100,0,0"/>
+            <DropDownButton Content="" Height="41" Width="300" HorizontalAlignment="Center">
                 <DropDownButton.Flyout>
                     <MenuFlyout Placement="Bottom">
                         <MenuFlyoutItem Width="288" Text="Arms"/>
