@@ -26,5 +26,10 @@ namespace FedtFitness.View
         {
             this.InitializeComponent();
         }
+
+        private void DropDownButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
