@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using FedtFitness.View;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,19 +23,33 @@ namespace FedtFitness
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
+            TitleTextBlock.Text = "Fedt";
+
+
+
         }
 
-        private void Hamburgermenu_OnClick(object sender, RoutedEventArgs e)
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
 
-        private void IconsListbox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (WorkoutEquipmentBoxItem.IsSelected)
+            {
+                MyFrame.Navigate(typeof(WorkoutEquipment));
+                TitleTextBlock.Text = "WorkoutEquipment";
+            }
+            else if (WorkoutMuscleGroupBoxItem.IsSelected)
+            {
+                MyFrame.Navigate(typeof(WorkoutMuscleGroup));
+                TitleTextBlock.Text = "WorkoutMuscleGroup";
+            }
         }
     }
 }

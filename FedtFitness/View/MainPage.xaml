@@ -9,77 +9,85 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-       <Grid.RowDefinitions>
-           <RowDefinition Height="Auto"/>
-           <RowDefinition Height="1"/>
-       </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+
+
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
+
         </Grid.ColumnDefinitions>
-        <RelativePanel Name="TopPanel" HorizontalAlignment ="Left" Width="1920">
-            <Button x:Name="Hamburgermenu" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" 
-                    FontSize="24" Click="Hamburgermenu_OnClick" Height="56" Width="60"/>
-            <TextBlock Name="Title" RelativePanel.Below="Hamburgermenu" FontSize="24" 
-                       FontWeight="Bold" Margin="65,12,0,0"  />
+
+
+        <Grid.Background>
+            <ImageBrush ImageSource="../Assets/test.jpg" Stretch="UniformToFill" Opacity="0.3"/>
+        </Grid.Background>
+
+
+
+        <RelativePanel  Name="TopPanel" HorizontalAlignment="Left" Background="DimGray" Width="1920">
+            <Button x:Name="HamburgerButton" 
+                    FontFamily="Segoe MDL2 Assets" 
+                    Content="&#xE700;" 
+                    FontSize="24" 
+                    Click="HamburgerButton_Click" 
+                    Height="56" Width="60"/>
+
+            <TextBlock Name="TitleTextBlock"
+                       RelativePanel.RightOf="HamburgerButton"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="65,12,0,0"/>
+
+
+
+
         </RelativePanel>
+        <StackPanel Grid.Row="1" Background="Transparent" Name="ViewPanel">
 
-        <StackPanel Grid.Row="1" Background="Transparent" Name ="viewpanel">
-            <StackPanel/>
         </StackPanel>
-
         <Frame Name="Myframe"/>
-<SplitView x:Name="MySplitView" 
-           Background="Transparent"
-           Grid.Row="1"
-           DisplayMode="Overlay"
-           OpenPaneLength="160"
-           CompactPaneLength="0" 
-           HorizontalAlignment="Left">
-    <SplitView.Pane>
-        <ListBox SelectionMode="Single" 
-                 Background="#1D241C"
-                 x:Name="IconsListbox" 
-                 SelectionChanged="IconsListbox_OnSelectionChanged">
-            <ListBoxItem x:Name="WorkOut">
-<StackPanel Orientation="Horizontal">
-    <TextBlock FontSize="36"/>
-    <TextBlock Text="Workout" FontSize="20" Margin="10,0,0,0" />
+        <SplitView x:Name ="MySplitView" 
+                   Background="Transparent"
+                       Grid.Row="1" 
+                       DisplayMode="Overlay" 
+                       OpenPaneLength="250" 
+                       CompactPaneLength="0" 
+                       
+                   HorizontalAlignment="Left" >
+            <SplitView.Pane>
 
-</StackPanel>
-            </ListBoxItem>
-            <ListBoxItem x:Name="ExerciseList">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="36"/>
-                    <TextBlock Text="Exercise List" FontSize="20" Margin="10,0,0,0" />
+                <ListBox SelectionMode="Single" 
+                         Background="#1D241C"
+                         x:Name="IconsListBox" 
+                         SelectionChanged="IconsListBox_SelectionChanged">
 
-                </StackPanel>
-            </ListBoxItem>
-            <ListBoxItem x:Name="Accountsettings">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="36"/>
-                    <TextBlock Text="Account Settings" FontSize="20" Margin="10,0,0,0" />
 
-                </StackPanel>
-            </ListBoxItem>
-            <ListBoxItem x:Name="DailyChallange">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="36"/>
-                    <TextBlock Text="Daily Challange" FontSize="20" Margin="10,0,0,0" />
+                    <ListBoxItem x:Name="WorkoutEquipmentBoxItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock  FontSize ="36" />
+                            <TextBlock Text="WorkoutEquipment" FontSize="20" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </ListBoxItem>
 
-                </StackPanel>
-            </ListBoxItem>
-          <ListBoxItem x:Name="MultiplayerGame">
-              <StackPanel Orientation="Horizontal">
-                  <TextBlock FontSize="36"/>
-                  <TextBlock Text="Multiplayer Game" FontSize="20" Margin="10,0,0,0" />
+                    <ListBoxItem x:Name="WorkoutMuscleGroupBoxItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontSize ="36" />
+                            <TextBlock Text="WorkoutMuscleGroup" FontSize="20" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
 
-              </StackPanel>
-          </ListBoxItem>
-            </ListBox>
-    </SplitView.Pane>
+            </SplitView.Pane>
 
-    <Frame x:Name="MyFrame" Margin="162,0,-1119,0"/>
-    </SplitView>
+
+
+            <Frame x:Name="MyFrame" Margin="162,0,-1119,0"/>
+
+        </SplitView>
+
 
 
     </Grid>
