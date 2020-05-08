@@ -132,8 +132,8 @@
     <Compile Include="View\WorkoutEquipment.xaml.cs">
       <DependentUpon>WorkoutEquipment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WorkoutMuscleGroups.xaml.cs">
-      <DependentUpon>WorkoutMuscleGroups.xaml</DependentUpon>
+    <Compile Include="View\WorkoutMuscleGroup.xaml.cs">
+      <DependentUpon>WorkoutMuscleGroup.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -164,7 +164,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\WorkoutMuscleGroups.xaml">
+    <Page Include="View\WorkoutMuscleGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
