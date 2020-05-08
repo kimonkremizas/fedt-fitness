@@ -127,6 +127,9 @@
     <Compile Include="Model\ExerciseCatalogSingleton.cs" />
     <Compile Include="Model\Musclegroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\WorkoutEquipment.xaml.cs">
+      <DependentUpon>WorkoutEquipment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\WorkoutMuscleGroups.xaml.cs">
       <DependentUpon>WorkoutMuscleGroups.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WorkoutEquipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\WorkoutMuscleGroups.xaml">
       <SubType>Designer</SubType>

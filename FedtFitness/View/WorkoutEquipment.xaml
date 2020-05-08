@@ -1,32 +1,31 @@
 ﻿<Page
-    x:Class="FedtFitness.View.WorkoutMuscleGroups"
+    x:Class="FedtFitness.View.WorkoutEquipment"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:FedtFitness.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:muxc="using:Windows.UI.Xaml.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" Grid.Column="1">
-            <TextBlock Text="Select muscle group:" FontSize="30" Height="50" Width="298" Margin="0,100,0,0"/>
+            <TextBlock Text="Select equipment:" FontSize="30" Height="50" Width="298" Margin="0,100,0,0"/>
             <DropDownButton Content="" Height="41" Width="288" Margin="90,0,0,0">
                 <DropDownButton.Flyout>
                     <MenuFlyout Placement="Bottom">
-                        <MenuFlyoutItem Width="288" Text="Arms"/>
-                        <MenuFlyoutItem Text="Back"/>
-                        <MenuFlyoutItem Text="Legs"/>
-                        <MenuFlyoutItem Text="Abs"/>
-                        <MenuFlyoutItem Text="Chest"/>
-                        <MenuFlyoutItem Text="Shoulders"/>
-                        <MenuFlyoutItem Text="Neck"/>
+                        <MenuFlyoutItem Width="288" Text="None"/>
+                        <MenuFlyoutItem Text="Dumbbells"/>
+                        <MenuFlyoutItem Text="Chair"/>
+                        <MenuFlyoutItem Text="Resistance band"/>
+                        <MenuFlyoutItem Text="Medicine ball"/>
+                        <MenuFlyoutItem Text="Sandbag"/>
+                        <MenuFlyoutItem Text="Ab wheel"/>
                     </MenuFlyout>
                 </DropDownButton.Flyout>
             </DropDownButton>
