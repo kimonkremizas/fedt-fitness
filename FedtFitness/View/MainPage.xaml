@@ -84,7 +84,7 @@
 
 
 
-            <Frame x:Name="MyFrame" Margin="162,0,-1119,0"/>
+            <Frame x:Name="MyFrame" Background="Transparent" Margin="250,0,1420,0"/>
 
         </SplitView>
 
