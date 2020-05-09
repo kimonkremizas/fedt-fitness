@@ -10,13 +10,13 @@ namespace FedtFitness.ViewModel
     class ExerciseViewModel
     {
         public ExerciseCatalogSingleton exerciseCatalogSingleton { get; set; }
-        public int wId { get; set; }
-        public int exId { get; set; }
-        public string eName { get; set; }
-        public int length { get; set; }
-        public int eqId { get; set; }
-        public int mId { get; set; }
-        public string eDescription { get; set; }
+        public int EwID { get; set; }
+        public int EeID { get; set; }
+        public string EName { get; set; }
+        public int ELength { get; set; }
+        public int EeqId { get; set; }
+        public int EmgId { get; set; }
+        public string EDescrip { get; set; }
 
         private Exercise _selectedExercise;
         public Exercise SelectedExercise

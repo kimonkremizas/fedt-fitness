@@ -120,7 +120,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="RelayCommand\RelayCommand.cs" />
+    <Compile Include="ViewModel\EquipmentViewModel.cs" />
     <Compile Include="ViewModel\ExerciseViewModel.cs" />
+    <Compile Include="ViewModel\MuscleGroupViewModel.cs" />
     <Compile Include="View\HamburgerMenu.xaml.cs">
       <DependentUpon>HamburgerMenu.xaml</DependentUpon>
     </Compile>

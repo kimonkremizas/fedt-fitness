@@ -7,14 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-        <Grid.ColumnDefinitions>
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <StackPanel Orientation="Vertical" Grid.Column="1">
             <TextBlock Text="Select equipment:" FontSize="30" Height="50"  HorizontalAlignment="Center" Margin="0,100,0,0"/>
             <DropDownButton Content="" Height="41" Width="300" HorizontalAlignment="Center">
                 <DropDownButton.Flyout>
