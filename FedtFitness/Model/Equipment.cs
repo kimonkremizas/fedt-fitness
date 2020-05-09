@@ -9,13 +9,13 @@ namespace FedtFitness.Model
 {
     class Equipment
     {
-        public int Equipment_id { get; set; }
-        public string Name { get; set; }
+        public int _equipmentId { get; set; }
+        public string _name { get; set; }
 
         public Equipment(int equipmentId, string name)
         {
-            Equipment_id = equipmentId;
-            Name = name;
+            _equipmentId = equipmentId;
+            _name = name;
         }
     }
 }
