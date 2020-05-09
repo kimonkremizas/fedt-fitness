@@ -16,6 +16,11 @@ namespace FedtFitness.Model
         public int _musclesId { get; set; }
         public string _description { get; set; }
 
+        public Exercise()
+        {
+            
+        }
+
         public Exercise(int workoutId, int exerciseId, string name, int length, int equipmentId, int musclesId,
             string description)
         {
