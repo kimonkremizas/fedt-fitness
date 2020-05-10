@@ -119,7 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Persistency\FedtWebAPI.cs" />
+    <Compile Include="Persistency\GenericFedtWebAPI.cs" />
     <Compile Include="RelayCommand\RelayCommand.cs" />
     <Compile Include="ViewModel\EquipmentViewModel.cs" />
     <Compile Include="ViewModel\ExerciseViewModel.cs" />
@@ -191,7 +191,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.9</Version>
+      <Version>6.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />
