@@ -21,9 +21,6 @@
     </Page.Resources>
 
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="../Assets/test.jpg" Stretch="UniformToFill" Opacity="0.6"/>
-        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="181*"/>
             <RowDefinition Height="19*"/>
