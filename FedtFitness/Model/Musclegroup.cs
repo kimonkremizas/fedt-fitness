@@ -8,13 +8,28 @@ namespace FedtFitness.Model
 {
     class MuscleGroup
     {
-        public int _muscleId { get; set; }
-        public string _name { get; set; }
+        public int _muscleId;
+        public string _name;
 
+        public MuscleGroup()
+        {
+            
+        }
         public MuscleGroup(int muscleId, string name)
         {
             _muscleId = muscleId;
             _name = name;
+        }
+
+        public int MGID
+        {
+            get { return _muscleId;}
+            set { _muscleId = value;}
+        }
+        public string MGName
+        {
+            get { return _name;}
+            set { _name = value;}
         }
     }
 }
