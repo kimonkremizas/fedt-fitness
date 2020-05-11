@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace FedtFitness.ViewModel
         public EquipmentCatalogSingleton equipmentCatalogSingleton { get; set;}
         public int TeqED { get; set; }
         public string TName { get; set; }
+        private ObservableCollection<Equipment> allEquipments { get; set; }
 
         private Equipment _selectedEquipment;
 
@@ -25,7 +27,10 @@ namespace FedtFitness.ViewModel
         {
             equipmentCatalogSingleton = EquipmentCatalogSingleton.Instance;
             _selectedEquipment = new Equipment();
+            allEquipments = equipmentCatalogSingleton.Equipments;
         }
+
+
 
     }
 }

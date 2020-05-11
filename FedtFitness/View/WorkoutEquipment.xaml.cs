@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using FedtFitness.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,11 +26,14 @@ namespace FedtFitness.View
         public WorkoutEquipment()
         {
             this.InitializeComponent();
+            this.DataContext = evm;
         }
 
         private void DropDownButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+EquipmentViewModel evm = new EquipmentViewModel();
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FedtFitness.Persistency;
 
 namespace FedtFitness.Model
 {
@@ -15,6 +16,7 @@ namespace FedtFitness.Model
         private EquipmentCatalogSingleton()
         {
             Equipments = new ObservableCollection<Equipment>();
+            Equipments = new ObservableCollection<Equipment>(GenericFedtWebAPI<Equipment>.getAll("api/Equipments"));
         }
 
         public static EquipmentCatalogSingleton Instance
