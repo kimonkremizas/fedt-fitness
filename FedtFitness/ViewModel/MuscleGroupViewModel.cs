@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace FedtFitness.ViewModel
 
         public int MGId { get; set; }
         public string MGName { get; set; }
+        public ObservableCollection<MuscleGroup> allMuscleGroups { get; set; }
+
 
         private MuscleGroup _selectedMuscleGroup;
 
@@ -26,7 +29,8 @@ namespace FedtFitness.ViewModel
         public MuscleGroupViewModel()
         {
             musclegroupCatalogSingleton = MuscleGroupCatalogSingleton.Instance;
-            _selectedMuscleGroup = new MuscleGroup();
+            _selectedMuscleGroup = new MuscleGroup(MGId, MGName);
+            allMuscleGroups = musclegroupCatalogSingleton.MuscleGroups;
         }
 
     }

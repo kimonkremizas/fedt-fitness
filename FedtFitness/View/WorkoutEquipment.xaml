@@ -5,30 +5,47 @@
     xmlns:local="using:FedtFitness.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:FedtFitness.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
+    <Page.DataContext>
+        <viewModel:FiltersViewModel/>
+    </Page.DataContext>
+
+
     <Grid>
-            <Grid.ColumnDefinitions>
+
+        
+        <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Vertical" Grid.Column="1">
-            <TextBlock Text="Select equipment:" FontSize="30" Height="50"  HorizontalAlignment="Center" Margin="0,100,0,0"/>
-            <DropDownButton Content="" Height="41" Width="300" HorizontalAlignment="Center">
-                <DropDownButton.Flyout>
-                    <MenuFlyout Placement="Bottom">
-                        <MenuFlyoutItem Width="288" Text="None"/>
-                        <MenuFlyoutItem Text="Dumbbells"/>
-                        <MenuFlyoutItem Text="Chair"/>
-                        <MenuFlyoutItem Text="Resistance band"/>
-                        <MenuFlyoutItem Text="Medicine ball"/>
-                        <MenuFlyoutItem Text="Sandbag"/>
-                        <MenuFlyoutItem Text="Ab wheel"/>
-                    </MenuFlyout>
-                </DropDownButton.Flyout>
-            </DropDownButton>
+            <TextBlock Text="Customize your workout" FontSize="30" Height="50"  HorizontalAlignment="Center" Margin="0,100,0,0"/>
+<StackPanel Orientation="Horizontal">
+            <ComboBox HorizontalAlignment="Center"
+                      PlaceholderText="Select equipment"
+                      ItemsSource="{Binding AllEquipments }" 
+                      DisplayMemberPath="{Binding eqName}" 
+                     
+                      Width="200"
+                      Margin="20,20,20,20"
+                      />
+
+                <ComboBox HorizontalAlignment="Center"
+                      PlaceholderText="Select muscle group"
+                      ItemsSource="{Binding AllMuscleGroups }" 
+                      DisplayMemberPath="{Binding mgName}" 
+                     
+                      Width="200"
+                      Margin="20,20,20,20"
+            />
+
+</StackPanel>
+
         </StackPanel>
     </Grid>
 </Page>

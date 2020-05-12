@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -34,6 +35,7 @@ namespace FedtFitness.View
 
         }
 
-EquipmentViewModel evm = new EquipmentViewModel();
+        FiltersViewModel evm = new FiltersViewModel();
+
     }
 }

@@ -11,9 +11,9 @@ namespace FedtFitness.ViewModel
     class EquipmentViewModel
     {
         public EquipmentCatalogSingleton equipmentCatalogSingleton { get; set;}
-        public int TeqED { get; set; }
+        public int TeqID { get; set; }
         public string TName { get; set; }
-        private ObservableCollection<Equipment> allEquipments { get; set; }
+        public ObservableCollection<Equipment> allEquipments { get; set; }
 
         private Equipment _selectedEquipment;
 
@@ -26,7 +26,7 @@ namespace FedtFitness.ViewModel
         public EquipmentViewModel()
         {
             equipmentCatalogSingleton = EquipmentCatalogSingleton.Instance;
-            _selectedEquipment = new Equipment();
+            _selectedEquipment = new Equipment(TeqID, TName);
             allEquipments = equipmentCatalogSingleton.Equipments;
         }
 
