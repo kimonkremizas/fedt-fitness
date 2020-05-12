@@ -11,25 +11,30 @@ namespace FedtFitness.Model
         public int _muscleId;
         public string _name;
 
-        public MuscleGroup()
-        {
+        //public MuscleGroup()
+        //{
             
-        }
+        //}
         public MuscleGroup(int muscleId, string name)
         {
             _muscleId = muscleId;
             _name = name;
         }
 
-        public int MGID
+        public int mgId
         {
             get { return _muscleId;}
             set { _muscleId = value;}
         }
-        public string MGName
+        public string mgName
         {
             get { return _name;}
             set { _name = value;}
+        }
+
+        public override string ToString()
+        {
+            return $"{mgName}";
         }
     }
 }
