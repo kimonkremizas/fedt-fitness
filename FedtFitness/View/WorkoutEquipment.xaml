@@ -26,26 +26,37 @@
             <StackPanel Orientation="Vertical" Grid.Column="1">
             <TextBlock Text="Customize your workout" FontSize="30" Height="50"  HorizontalAlignment="Center" Margin="0,100,0,0"/>
 <StackPanel Orientation="Horizontal">
-            <ComboBox HorizontalAlignment="Center"
+            <ComboBox 
+                Name="EquipmentCombobox"
+                      HorizontalAlignment="Center"
                       PlaceholderText="Select equipment"
-                      ItemsSource="{Binding AllEquipments }" 
+                      ItemsSource="{Binding AllEquipments, Mode = TwoWay  }" 
                       DisplayMemberPath="{Binding eqName}" 
-                     
+                      SelectedValue="ID"
+                      SelectedItem="{Binding SelectedeqId, Mode=TwoWay}"
                       Width="200"
                       Margin="20,20,20,20"
                       />
 
-                <ComboBox HorizontalAlignment="Center"
+            <ComboBox Name="MuscleGroupCombobox"
+                      HorizontalAlignment="Center"
                       PlaceholderText="Select muscle group"
-                      ItemsSource="{Binding AllMuscleGroups }" 
+                      ItemsSource="{Binding AllMuscleGroups, Mode=TwoWay }" 
                       DisplayMemberPath="{Binding mgName}" 
-                     
+                      SelectedValuePath="ID"
+                      SelectedItem="{Binding SelectedMuscleGroup, Mode=TwoWay}"
                       Width="200"
                       Margin="20,20,20,20"
-            />
+                      />
+
 
 </StackPanel>
 
-        </StackPanel>
+            <Button Content="Find Exercises" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Click="Button_Click" />
+
+            </StackPanel>
     </Grid>
 </Page>

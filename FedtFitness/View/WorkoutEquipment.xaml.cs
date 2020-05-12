@@ -30,12 +30,21 @@ namespace FedtFitness.View
             this.DataContext = evm;
         }
 
-        private void DropDownButton_Click(object sender, RoutedEventArgs e)
+        FiltersViewModel evm = new FiltersViewModel();
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        FiltersViewModel evm = new FiltersViewModel();
+       // public void EquipmentCombobox(object sender, RoutedEventArgs e)
+        //{
+
+        //}
+
+
+
+        
 
     }
 }

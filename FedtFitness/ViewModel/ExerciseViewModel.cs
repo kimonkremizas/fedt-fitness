@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,12 @@ namespace FedtFitness.ViewModel
     class ExerciseViewModel
     {
         public ExerciseCatalogSingleton exerciseCatalogSingleton { get; set; }
-        public int EwID { get; set; }
-        public int EeID { get; set; }
-        public string EName { get; set; }
-        public int ELength { get; set; }
-        public int EeqId { get; set; }
-        public int EmgId { get; set; }
-        public string EDescrip { get; set; }
+        public int exId { get; set; }
+        public string exName { get; set; }
+        public int exLength { get; set; }
+        public int eqId { get; set; }
+        public int mgId { get; set; }
+        public string exDescr { get; set; }
 
         private Exercise _selectedExercise;
         public Exercise SelectedExercise
@@ -25,10 +25,13 @@ namespace FedtFitness.ViewModel
             set { _selectedExercise = value; }
         }
 
+        public ObservableCollection<Exercise> AllExercises { get; set; }
+
         public ExerciseViewModel()
         {
             exerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
-            _selectedExercise = new Exercise();
+            _selectedExercise = new Exercise(exId, exName, exLength, eqId, mgId, exDescr);
+            AllExercises = exerciseCatalogSingleton.Exercises;
         }
     }
 }

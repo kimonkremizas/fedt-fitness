@@ -8,7 +8,6 @@ namespace FedtFitness.Model
 {
     class Exercise
     {
-        public int _workoutId;
         public int _exerciseId;
         public string _name;
         public int _length;
@@ -16,15 +15,14 @@ namespace FedtFitness.Model
         public int _musclesId;
         public string _description;
 
-        public Exercise()
-        {
+        //public Exercise()
+        //{
             
-        }
+        //}
 
-        public Exercise(int workoutId, int exerciseId, string name, int length, int equipmentId, int musclesId,
+        public Exercise( int exerciseId, string name, int length, int equipmentId, int musclesId,
             string description)
         {
-            _workoutId = workoutId;
             _exerciseId = exerciseId;
             _name = name;
             _length = length;
@@ -33,11 +31,7 @@ namespace FedtFitness.Model
             _description = description;
         }
 
-        public int EwID
-        {
-            get { return _workoutId;}
-            set { _workoutId = value;}
-        }
+      
 
         public int EeID
         {

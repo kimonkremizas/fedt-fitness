@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FedtFitness.Model;
+using FedtFitness.View;
 
 namespace FedtFitness.ViewModel
 {
@@ -25,7 +26,9 @@ namespace FedtFitness.ViewModel
             set { _selectedEquipment = value; }
         }
 
+        public  WorkoutEquipment SelectedeqId { get; set; }
 
+        //int id = (int)eqcb.EquipmentCombobox.SelectedValue;
 
         //MUSCLE GROUP
 
