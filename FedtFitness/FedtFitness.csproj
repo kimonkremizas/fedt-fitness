@@ -142,9 +142,6 @@
     <Compile Include="View\WorkoutEquipment.xaml.cs">
       <DependentUpon>WorkoutEquipment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WorkoutMuscleGroup.xaml.cs">
-      <DependentUpon>WorkoutMuscleGroup.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -180,10 +177,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\WorkoutEquipment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\WorkoutMuscleGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -54,7 +54,7 @@ namespace FedtFitness.View
 
         private void WorkoutMuscleGroup_Click(object sender, RoutedEventArgs e)
         {
-            Content.Navigate(typeof(WorkoutMuscleGroup), e);
+            Content.Navigate(typeof(WorkoutEquipment), e);
         }
 
         private void Content_Navigated(object sender, NavigationEventArgs e)

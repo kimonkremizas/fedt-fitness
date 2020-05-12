@@ -47,7 +47,7 @@ namespace FedtFitness
             }
             else if (WorkoutMuscleGroupBoxItem.IsSelected)
             {
-                MyFrame.Navigate(typeof(WorkoutMuscleGroup));
+                MyFrame.Navigate(typeof(WorkoutEquipment));
                 TitleTextBlock.Text = "WorkoutMuscleGroup";
             }
         }
