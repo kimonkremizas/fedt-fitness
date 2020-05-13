@@ -32,6 +32,9 @@ namespace FedtFitness.ViewModel
             exerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
             _selectedExercise = new Exercise(exId, exName, exLength, eqId, mgId, exDescr);
             AllExercises = exerciseCatalogSingleton.Exercises;
+           //var generateexercise =  AllExercises.Where(ex => ex._musclesId == SelectedmgId && ex._equipmentId == SelectedeqId);
         }
+
+        
     }
 }

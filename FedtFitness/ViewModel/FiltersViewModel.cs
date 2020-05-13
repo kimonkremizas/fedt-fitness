@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using FedtFitness.Annotations;
 using FedtFitness.Model;
 using FedtFitness.View;
 
 namespace FedtFitness.ViewModel
 {
-    class FiltersViewModel
+    class FiltersViewModel : INotifyPropertyChanged
     {
         //EQUIPMENT
 
@@ -23,12 +26,14 @@ namespace FedtFitness.ViewModel
         public Equipment SelectedEquipment
         {
             get { return _selectedEquipment; }
-            set { _selectedEquipment = value; }
+            set
+            {
+                _selectedEquipment = value;
+                OnPropertyChanged(nameof(F1));
+            }
         }
 
-        public  WorkoutEquipment SelectedeqId { get; set; }
-
-        //int id = (int)eqcb.EquipmentCombobox.SelectedValue;
+        
 
         //MUSCLE GROUP
 
@@ -46,8 +51,6 @@ namespace FedtFitness.ViewModel
         }
 
 
-        //FILTERS
-
         public FiltersViewModel()
         {
             EquipmentCatalogSingleton = EquipmentCatalogSingleton.Instance;
@@ -57,6 +60,38 @@ namespace FedtFitness.ViewModel
             MuscleGroupCatalogSingleton = MuscleGroupCatalogSingleton.Instance;
             _selectedMuscleGroup = new MuscleGroup(mgId, mgName);
             AllMuscleGroups = MuscleGroupCatalogSingleton.MuscleGroups;
+
+            ecs = ExerciseCatalogSingleton.Instance;
         }
+
+        //FILTERS
+        public ExerciseCatalogSingleton ecs { get; set; }
+        public ObservableCollection<Exercise> AllExercises
+        {
+            get
+            {
+                return ecs.Exercises;
+            }
+        }
+
+        public ObservableCollection<Exercise> F1
+       {
+           get
+           {
+               
+               
+               IEnumerable<Exercise>  filtered= AllExercises.Where(ex => ex.EeqID == SelectedEquipment.eqId);
+               return new ObservableCollection<Exercise>(filtered);
+           }
+       }
+       public ObservableCollection<Exercise> F2 { get; set; }
+
+       public event PropertyChangedEventHandler PropertyChanged;
+
+       [NotifyPropertyChangedInvocator]
+       protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+       {
+           PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+       }
     }
 }

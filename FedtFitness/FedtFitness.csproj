@@ -120,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Persistency\GenericFedtWebAPI.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand\RelayCommand.cs" />
     <Compile Include="ViewModel\ExerciseViewModel.cs" />
     <Compile Include="ViewModel\FiltersViewModel.cs" />

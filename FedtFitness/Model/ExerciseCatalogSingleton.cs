@@ -14,7 +14,11 @@ namespace FedtFitness.Model
 
         private ExerciseCatalogSingleton()
         {
-            Exercises = new ObservableCollection<Exercise>();
+           Exercises = new ObservableCollection<Exercise>();
+           Exercises.Add(new Exercise(1,"pushups",15, 1, 1, "Train your chest"));
+           Exercises.Add(new Exercise(2, "lifts", 15, 2, 1, "Train your chest"));
+           Exercises.Add(new Exercise(3, "pushs", 15, 2,1, "Train your chest"));
+
         }
 
         public static ExerciseCatalogSingleton Instance
