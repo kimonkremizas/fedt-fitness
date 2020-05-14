@@ -9,8 +9,8 @@ namespace FedtFitness.Model
 {
     public class Equipment
     {
-        public int _equipmentId;
-        public string _name;
+        private int _eqId;
+        private string _eqName;
 
         //public Equipment()
         //{
@@ -19,25 +19,25 @@ namespace FedtFitness.Model
 
         public Equipment(int equipmentId, string name)
         {
-            _equipmentId = equipmentId;
-            _name = name;
+            _eqId = equipmentId;
+            _eqName = name;
         }
 
-        public int eqId
+        public int Equipment_ID
         {
-            get { return _equipmentId;}
-            set { _equipmentId = value;}
+            get { return _eqId; }
+            set { _eqId = value;}
         }
 
-        public string eqName
+        public string Name
         {
-            get { return _name;}
-            set { _name = value;}
+            get { return _eqName; }
+            set { _eqName = value;}
         }
 
         public override string ToString()
         {
-            return $"{eqName}";
+            return $"{_eqName}";
         }
     }
 }

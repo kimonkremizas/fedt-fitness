@@ -17,8 +17,8 @@ namespace FedtFitness.ViewModel
         //EQUIPMENT
 
         public EquipmentCatalogSingleton EquipmentCatalogSingleton { get; set; }
-        public int eqId { get; set; }
-        public string eqName { get; set; }
+        public int Equipment_ID { get; set; }
+        public string Name { get; set; }
         public ObservableCollection<Equipment> AllEquipments { get; set; }
 
         private Equipment _selectedEquipment;
@@ -33,13 +33,13 @@ namespace FedtFitness.ViewModel
             }
         }
 
-        
+
 
         //MUSCLE GROUP
 
         public MuscleGroupCatalogSingleton MuscleGroupCatalogSingleton { get; set; }
-        public int mgId { get; set; }
-        public string mgName { get; set; }
+        public int Muscles_ID { get; set; }
+        public string MGName { get; set; }
         public ObservableCollection<MuscleGroup> AllMuscleGroups { get; set; }
 
         private MuscleGroup _selectedMuscleGroup;
@@ -47,22 +47,28 @@ namespace FedtFitness.ViewModel
         public MuscleGroup SelectedMuscleGroup
         {
             get { return _selectedMuscleGroup; }
-            set { _selectedMuscleGroup = value; }
+            set
+            {
+                _selectedMuscleGroup = value;
+                OnPropertyChanged(nameof(F1));
+            }
         }
 
 
         public FiltersViewModel()
         {
             EquipmentCatalogSingleton = EquipmentCatalogSingleton.Instance;
-            _selectedEquipment = new Equipment(eqId, eqName);
+            _selectedEquipment = new Equipment(Equipment_ID, Name);
             AllEquipments = EquipmentCatalogSingleton.Equipments;
 
             MuscleGroupCatalogSingleton = MuscleGroupCatalogSingleton.Instance;
-            _selectedMuscleGroup = new MuscleGroup(mgId, mgName);
+            _selectedMuscleGroup = new MuscleGroup(Muscles_ID, MGName);
             AllMuscleGroups = MuscleGroupCatalogSingleton.MuscleGroups;
 
             ecs = ExerciseCatalogSingleton.Instance;
         }
+
+        public ExerciseViewModel abs { get; set; }
 
         //FILTERS
         public ExerciseCatalogSingleton ecs { get; set; }
@@ -80,11 +86,19 @@ namespace FedtFitness.ViewModel
            {
                
                
-               IEnumerable<Exercise>  filtered= AllExercises.Where(ex => ex.EeqID == SelectedEquipment.eqId);
+               IEnumerable<Exercise>  filtered= AllExercises.Where(ex => ex.Equipment_ID == SelectedEquipment.Equipment_ID && ex.Muscles_ID == SelectedMuscleGroup.Muscles_ID);
                return new ObservableCollection<Exercise>(filtered);
            }
        }
-       public ObservableCollection<Exercise> F2 { get; set; }
+       public ObservableCollection<Exercise> F2 {
+           get
+           {
+
+
+               IEnumerable<Exercise> filtered2 = AllExercises.Where(ex => ex.Muscles_ID == SelectedMuscleGroup.Muscles_ID);
+               return new ObservableCollection<Exercise>(filtered2);
+           }
+       }
 
        public event PropertyChangedEventHandler PropertyChanged;
 

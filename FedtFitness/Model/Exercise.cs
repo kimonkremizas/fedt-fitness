@@ -33,37 +33,37 @@ namespace FedtFitness.Model
 
       
 
-        public int EeID
+        public int Exercise_ID
         {
             get { return _exerciseId;}
             set { _exerciseId = value; }
         }
 
-        public string EName
+        public string ExName
         {
             get { return _name;}
             set { _name = value;}
         }
 
-        public int ELenght
+        public int Length
         {
             get { return _length;}
             set { _length = value;}
         }
 
-        public int EeqID
+        public int Equipment_ID
         {
             get { return _equipmentId;}
             set { _equipmentId = value;}
         }
 
-        public int EmgID
+        public int Muscles_ID
         {
             get { return _musclesId;}
             set { _musclesId = value;}
         }
 
-        public string EDescrip
+        public string Description
         {
             get { return _description;}
             set { _description = value;}

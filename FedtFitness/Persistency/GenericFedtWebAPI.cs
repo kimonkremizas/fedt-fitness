@@ -11,7 +11,6 @@ namespace FedtFitness.Persistency
 {
     class GenericFedtWebAPI<T> where T:class
     {
-
         public static List<T> getAll(string url)
         {
             const string serverURL = "http://localhost:63830/";
@@ -35,10 +34,6 @@ namespace FedtFitness.Persistency
                     return new List<T>();
                 }
             }
-
         }
-
-
-
     }
 }

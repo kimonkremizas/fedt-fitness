@@ -25,7 +25,7 @@ namespace FedtWebAPIService
                 .IsUnicode(false);
 
             modelBuilder.Entity<Excercise>()
-                .Property(e => e.Name)
+                .Property(e => e.ExName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Excercise>()
@@ -33,7 +33,7 @@ namespace FedtWebAPIService
                 .IsUnicode(false);
 
             modelBuilder.Entity<MuscleGroup>()
-                .Property(e => e.Name)
+                .Property(e => e.MGName)
                 .IsUnicode(false);
         }
     }

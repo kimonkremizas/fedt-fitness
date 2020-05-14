@@ -16,7 +16,7 @@ namespace FedtWebAPIService
         public int Excercise_ID { get; set; }
 
         [StringLength(50)]
-        public string Name { get; set; }
+        public string ExName { get; set; }
 
         public int? Length { get; set; }
 

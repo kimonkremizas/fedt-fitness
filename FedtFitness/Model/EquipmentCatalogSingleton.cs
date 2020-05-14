@@ -16,7 +16,7 @@ namespace FedtFitness.Model
         private EquipmentCatalogSingleton()
         {
             Equipments = new ObservableCollection<Equipment>();
-         // Equipments = new ObservableCollection<Equipment>(GenericFedtWebAPI<Equipment>.getAll("api/Equipments"));
+            //Equipments = new ObservableCollection<Equipment>(GenericFedtWebAPI<Equipment>.getAll("api/Equipments"));
             Equipments.Add(new Equipment(1, "None"));
             Equipments.Add(new Equipment(2, "Dumbbells"));
             Equipments.Add(new Equipment(3, "Chair"));
