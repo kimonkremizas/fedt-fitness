@@ -21,7 +21,7 @@ namespace FedtFitness.Model
             _name = name;
         }
 
-        public int mgId
+        public int Muscles_ID
         {
             get { return _muscleId;}
             set { _muscleId = value;}
