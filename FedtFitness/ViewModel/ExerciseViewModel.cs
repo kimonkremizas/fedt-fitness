@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Security.Authentication.Web.Core;
 using FedtFitness.Annotations;
 using FedtFitness.Model;
 
@@ -22,25 +23,33 @@ namespace FedtFitness.ViewModel
         public string Description { get; set; }
 
         private Exercise _selectedExercise;
-        public Exercise SelectedExercise
-        {
-            get { return _selectedExercise; }
-            set
-            {
-                _selectedExercise = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public ObservableCollection<Exercise> AllExercises { get; set; }
 
         public ExerciseViewModel()
         {
             exerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
             _selectedExercise = new Exercise(Exercise_ID, ExName, Length, Equipment_ID, Muscles_ID, Description);
             AllExercises = exerciseCatalogSingleton.Exercises;
-           //var generateexercise =  AllExercises.Where(ex => ex._musclesId == SelectedmgId && ex._equipmentId == SelectedeqId);
         }
+
+        //private Exercise _clickedExercise;
+        public Exercise ClickedExercise { get; set; }
+
+        public Exercise SelectedExercise
+        {
+            get
+            {
+                return _selectedExercise;
+            }
+            set
+            {
+                _selectedExercise = value;
+                OnPropertyChanged(nameof(ClickedExercise));
+            }
+        }
+
+        public ObservableCollection<Exercise> AllExercises { get; set; }
+
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;

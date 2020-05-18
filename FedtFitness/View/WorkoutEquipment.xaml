@@ -58,7 +58,9 @@
         </StackPanel>
         <!-- List part -->
         <StackPanel Grid.Column="0" VerticalAlignment="Stretch">
-            <ListView ItemsSource="{Binding F1, Mode=TwoWay}" VerticalAlignment="Stretch" SelectedItem="{Binding abs.SelectedExercise}">
+            <ListView ItemsSource="{Binding F1}" 
+                      VerticalAlignment="Stretch" 
+                      SelectedItem="{Binding abs.SelectedExercise, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
@@ -73,20 +75,6 @@
         </StackPanel>
 
         <!-- Details Part -->
-        <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1">
-            <StackPanel
-                        BorderBrush="DarkOrange"
-                        BorderThickness="3,3,3,3"
-                        RenderTransformOrigin="0.5,0.5" Width="703" Height="416" >
-                <StackPanel.RenderTransform>
-                    <CompositeTransform ScaleX="-1"/>
-                </StackPanel.RenderTransform>
-                <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="" RenderTransformOrigin="0.5,0.5"/>
-                <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text=""/>
-                <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text=""/>
-            </StackPanel>
-
-        </StackPanel>-->
 
         <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
             <StackPanel
@@ -95,9 +83,12 @@
                 BorderThickness="3,3,3,3"
                 Orientation="Horizontal">
                 <StackPanel Margin="20,20,20,20" Width="100">
-                    <TextBlock  Text="{Binding abs.SelectedExercise.ExName}" />
-                    <TextBlock  Text="{Binding abs.SelectedExercise.Description}" />
-                    <TextBlock  Text="{Binding abs.SelectedExercise.Exercise_ID}" />
+                    <StackPanel.DataContext>
+                        <viewModel:ExerciseViewModel/>
+                    </StackPanel.DataContext>
+                    <TextBlock  Text="{Binding SelectedExercise.ExName}" />
+                    <TextBlock  Text="{Binding SelectedExercise.Description}" />
+                    <TextBlock  Text="{Binding SelectedExercise.Exercise_ID, Mode=TwoWay}" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>

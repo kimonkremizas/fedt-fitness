@@ -86,7 +86,8 @@ namespace FedtFitness.ViewModel
            {
                
                
-               IEnumerable<Exercise>  filtered= AllExercises.Where(ex => ex.Equipment_ID == SelectedEquipment.Equipment_ID && ex.Muscles_ID == SelectedMuscleGroup.Muscles_ID);
+               IEnumerable<Exercise>  filtered= AllExercises.Where(ex => ex.Equipment_ID == SelectedEquipment.Equipment_ID 
+                                                                         && ex.Muscles_ID == SelectedMuscleGroup.Muscles_ID);
                return new ObservableCollection<Exercise>(filtered);
            }
        }
