@@ -26,7 +26,7 @@ namespace FedtFitness.Model
             get { return _muscleId;}
             set { _muscleId = value;}
         }
-        public string mgName
+        public string MGName
         {
             get { return _name;}
             set { _name = value;}
@@ -34,7 +34,7 @@ namespace FedtFitness.Model
 
         public override string ToString()
         {
-            return $"{mgName}";
+            return $"{_name}";
         }
     }
 }
