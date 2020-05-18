@@ -135,7 +135,7 @@
     </Compile>
     <Compile Include="Model\Equipment.cs" />
     <Compile Include="Model\EquipmentCatalogSingleton.cs" />
-    <Compile Include="Model\Exercise.cs" />
+    <Compile Include="Model\Excercise.cs" />
     <Compile Include="Model\ExerciseCatalogSingleton.cs" />
     <Compile Include="Model\MuscleGroup.cs" />
     <Compile Include="Model\MuscleGroupCatalogSingleton.cs" />

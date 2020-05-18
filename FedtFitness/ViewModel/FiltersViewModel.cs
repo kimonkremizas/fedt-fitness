@@ -14,6 +14,21 @@ namespace FedtFitness.ViewModel
 {
     class FiltersViewModel : INotifyPropertyChanged
     {
+
+        public FiltersViewModel()
+        {
+            EquipmentCatalogSingleton = EquipmentCatalogSingleton.Instance;
+            _selectedEquipment = new Equipment(Equipment_ID, Name);
+            AllEquipments = EquipmentCatalogSingleton.Equipments;
+
+            MuscleGroupCatalogSingleton = MuscleGroupCatalogSingleton.Instance;
+            _selectedMuscleGroup = new MuscleGroup(Muscles_ID, MGName);
+            AllMuscleGroups = MuscleGroupCatalogSingleton.MuscleGroups;
+
+            ecs = ExerciseCatalogSingleton.Instance;
+        }
+
+
         //EQUIPMENT
 
         public EquipmentCatalogSingleton EquipmentCatalogSingleton { get; set; }
@@ -25,16 +40,17 @@ namespace FedtFitness.ViewModel
 
         public Equipment SelectedEquipment
         {
-            get { return _selectedEquipment; }
+            get
+            {
+                return _selectedEquipment;
+            }
             set
             {
                 _selectedEquipment = value;
                 OnPropertyChanged(nameof(F1));
             }
         }
-
-
-
+        
         //MUSCLE GROUP
 
         public MuscleGroupCatalogSingleton MuscleGroupCatalogSingleton { get; set; }
@@ -54,25 +70,12 @@ namespace FedtFitness.ViewModel
             }
         }
 
-
-        public FiltersViewModel()
-        {
-            EquipmentCatalogSingleton = EquipmentCatalogSingleton.Instance;
-            _selectedEquipment = new Equipment(Equipment_ID, Name);
-            AllEquipments = EquipmentCatalogSingleton.Equipments;
-
-            MuscleGroupCatalogSingleton = MuscleGroupCatalogSingleton.Instance;
-            _selectedMuscleGroup = new MuscleGroup(Muscles_ID, MGName);
-            AllMuscleGroups = MuscleGroupCatalogSingleton.MuscleGroups;
-
-            ecs = ExerciseCatalogSingleton.Instance;
-        }
-
         public ExerciseViewModel abs { get; set; }
 
-        //FILTERS
+        //REFERENCES
+
         public ExerciseCatalogSingleton ecs { get; set; }
-        public ObservableCollection<Exercise> AllExercises
+        public ObservableCollection<Excercise> AllExercises
         {
             get
             {
@@ -80,26 +83,23 @@ namespace FedtFitness.ViewModel
             }
         }
 
-        public ObservableCollection<Exercise> F1
+        
+        //CHECK IF ANY EXERCISES APPLY BOTH FILTERS AND CREATE FILTERED COLLECTION
+
+        public ObservableCollection<Excercise> F1
        {
            get
            {
-               
-               
-               IEnumerable<Exercise>  filtered= AllExercises.Where(ex => ex.Equipment_ID == SelectedEquipment.Equipment_ID 
+               IEnumerable<Excercise>  filtered= AllExercises.Where(ex => ex.Equipment_ID == SelectedEquipment.Equipment_ID
                                                                          && ex.Muscles_ID == SelectedMuscleGroup.Muscles_ID);
-               return new ObservableCollection<Exercise>(filtered);
-           }
-       }
-       public ObservableCollection<Exercise> F2 {
-           get
-           {
+                return new ObservableCollection<Excercise>(filtered);
 
-
-               IEnumerable<Exercise> filtered2 = AllExercises.Where(ex => ex.Muscles_ID == SelectedMuscleGroup.Muscles_ID);
-               return new ObservableCollection<Exercise>(filtered2);
            }
-       }
+
+        }
+       
+        
+
 
        public event PropertyChangedEventHandler PropertyChanged;
 

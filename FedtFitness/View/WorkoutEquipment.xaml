@@ -29,7 +29,7 @@
                 <ComboBox Name="EquipmentCombobox"
                       HorizontalAlignment="Center"
                       PlaceholderText="Select equipment"
-                      ItemsSource="{Binding AllEquipments, Mode = TwoWay  }" 
+                      ItemsSource="{Binding AllEquipments}" 
                       SelectedItem="{Binding SelectedEquipment, Mode=TwoWay}"
                       Width="200"
                       Margin="20,20,20,20">
@@ -40,7 +40,7 @@
                 <ComboBox Name="MuscleGroupCombobox"
                       HorizontalAlignment="Center"
                       PlaceholderText="Select muscle group"
-                      ItemsSource="{Binding AllMuscleGroups, Mode=TwoWay }" 
+                      ItemsSource="{Binding AllMuscleGroups}" 
                       SelectedItem="{Binding SelectedMuscleGroup, Mode=TwoWay}"
                       Width="200"
                       Margin="20,20,20,20"
@@ -51,14 +51,12 @@
 
             </StackPanel>
 
-            <Button Content="Find Exercises" 
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
-                    Click="Button_Click" />
+            
         </StackPanel>
         <!-- List part -->
         <StackPanel Grid.Column="0" VerticalAlignment="Stretch">
-            <ListView SelectionMode="Multiple" 
+            <ListView SelectionMode="Multiple"
+                      Name="ListView1"
                       ItemsSource="{Binding F1}" 
                       VerticalAlignment="Stretch" 
                       SelectedItem="{Binding abs.SelectedExercise, Mode=TwoWay}">
@@ -87,12 +85,13 @@
                     <!--<StackPanel.DataContext>
                         <viewModel:ExerciseViewModel/>
                     </StackPanel.DataContext>-->
-                    <TextBlock  Text="{Binding SelectedExercise.ExName}" />
-                    <TextBlock  Text="{Binding SelectedExercise.Description}" />
-                    <TextBlock  Text="{Binding SelectedExercise.Exercise_ID, Mode=TwoWay}" />
+                    <TextBlock  Text="{Binding abs.SelectedExercise.ExName}" />
+                    <TextBlock  Text="{Binding abs.SelectedExercise.Description}" />
+                    <TextBlock  Text="{Binding abs.SelectedExercise.Excercise_ID, Mode=TwoWay}" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>
+
 
 
     </Grid>

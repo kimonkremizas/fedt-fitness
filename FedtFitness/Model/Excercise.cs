@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace FedtFitness.Model
 {
-    class Exercise
+    class Excercise
     {
         public int _exerciseId;
         public string _name;
-        public int _length;
+        public int? _length;
         public int _equipmentId;
         public int _musclesId;
         public string _description;
@@ -20,7 +20,7 @@ namespace FedtFitness.Model
             
         //}
 
-        public Exercise( int exerciseId, string name, int length, int equipmentId, int musclesId,
+        public Excercise( int exerciseId, string name, int? length, int equipmentId, int musclesId,
             string description)
         {
             _exerciseId = exerciseId;
@@ -33,10 +33,10 @@ namespace FedtFitness.Model
 
       
 
-        public int Exercise_ID
+        public int Excercise_ID
         {
             get { return _exerciseId;}
-            set { _exerciseId = value; }
+            set { _exerciseId = value;}
         }
 
         public string ExName
@@ -45,7 +45,7 @@ namespace FedtFitness.Model
             set { _name = value;}
         }
 
-        public int Length
+        public int? Length
         {
             get { return _length;}
             set { _length = value;}

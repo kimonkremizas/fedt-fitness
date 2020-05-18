@@ -22,19 +22,19 @@ namespace FedtFitness.ViewModel
         public int Muscles_ID { get; set; }
         public string Description { get; set; }
 
-        private Exercise _selectedExercise;
+        private Excercise _selectedExercise;
 
         public ExerciseViewModel()
         {
             exerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
-            _selectedExercise = new Exercise(Exercise_ID, ExName, Length, Equipment_ID, Muscles_ID, Description);
+            _selectedExercise = new Excercise(Exercise_ID, ExName, Length, Equipment_ID, Muscles_ID, Description);
             AllExercises = exerciseCatalogSingleton.Exercises;
         }
 
         //private Exercise _clickedExercise;
-        public Exercise ClickedExercise { get; set; }
+        //public Exercise ClickedExercise { get; set; }
 
-        public Exercise SelectedExercise
+        public Excercise SelectedExercise
         {
             get
             {
@@ -43,13 +43,22 @@ namespace FedtFitness.ViewModel
             set
             {
                 _selectedExercise = value;
-                OnPropertyChanged(nameof(ClickedExercise));
+                OnPropertyChanged();
             }
         }
 
-        public ObservableCollection<Exercise> AllExercises { get; set; }
+        public ObservableCollection<Excercise> AllExercises { get; set; }
+
+        //public ObservableCollection<Exercise> SelectedListViewItemCollection
+        //{
+        //    get
+        //    {
 
 
+        //        IEnumerable<Exercise> filtered = AllExercises.Where(ex => ex.Equipment_ID == SelectedEquipment.Equipment_ID);
+        //        return new ObservableCollection<Exercise>(filtered);
+        //    }
+        //}
 
 
         public event PropertyChangedEventHandler PropertyChanged;

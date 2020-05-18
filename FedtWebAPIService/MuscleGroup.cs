@@ -13,6 +13,6 @@ namespace FedtWebAPIService
         public int Muscles_ID { get; set; }
 
         [StringLength(50)]
-        public string MGName { get; set; }
+        public string MGName{ get; set; }
     }
 }
