@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:FedtFitness.ViewModel"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -14,8 +15,7 @@
         <viewModel:FiltersViewModel/>
     </Page.DataContext>
 
-
-    <Grid>
+    <Grid Name="Grid1">
 
 
         <Grid.ColumnDefinitions>
@@ -55,15 +55,15 @@
         </StackPanel>
         <!-- List part -->
         <StackPanel Grid.Column="0" VerticalAlignment="Stretch">
-            <ListView SelectionMode="Multiple"
-                      Name="ListView1"
+            <ListView x:Name="ListView1"
+                      SelectionMode="Multiple"
                       ItemsSource="{Binding F1}" 
-                      VerticalAlignment="Stretch" 
-                      SelectedItem="{Binding abs.SelectedExercise, Mode=TwoWay}">
+                      VerticalAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <TextBlock Margin="20,20,20,20" 
+                            <TextBlock x:Name="TextBlock1"
+                                       Margin="20,20,20,20" 
                                        VerticalAlignment="Center"
                                        FontSize="18"
                                        Text="{Binding ExName}"/>
@@ -76,20 +76,15 @@
         <!-- Details Part -->
 
         <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
-            <StackPanel
-                Margin="10,10,10,10"
-                BorderBrush="DarkGray"
-                BorderThickness="3,3,3,3"
-                Orientation="Horizontal">
-                <StackPanel Margin="20,20,20,20" Width="100">
-                    <!--<StackPanel.DataContext>
-                        <viewModel:ExerciseViewModel/>
-                    </StackPanel.DataContext>-->
-                    <TextBlock  Text="{Binding abs.SelectedExercise.ExName}" />
-                    <TextBlock  Text="{Binding abs.SelectedExercise.Description}" />
-                    <TextBlock  Text="{Binding abs.SelectedExercise.Excercise_ID, Mode=TwoWay}" />
-                </StackPanel>
-            </StackPanel>
+
+            <ListView x:Name="ListView2"
+                        Margin="20,20,20,20" 
+                        VerticalAlignment="Center"
+                        FontSize="18"/>
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem, Mode=TwoWay}"/>
+
+
+
         </StackPanel>
 
 

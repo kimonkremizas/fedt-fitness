@@ -69,8 +69,6 @@ namespace FedtFitness.Model
             set { _description = value;}
         }
 
-
-
-
+        public bool IsSelected { get; internal set; }
     }
 }

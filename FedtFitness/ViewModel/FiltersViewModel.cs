@@ -10,6 +10,7 @@ using FedtFitness.Annotations;
 using FedtFitness.Model;
 using FedtFitness.View;
 
+
 namespace FedtFitness.ViewModel
 {
     class FiltersViewModel : INotifyPropertyChanged
@@ -26,7 +27,11 @@ namespace FedtFitness.ViewModel
             AllMuscleGroups = MuscleGroupCatalogSingleton.MuscleGroups;
 
             ecs = ExerciseCatalogSingleton.Instance;
+
+
         }
+
+
 
 
         //EQUIPMENT
@@ -97,11 +102,22 @@ namespace FedtFitness.ViewModel
            }
 
         }
-       
-        
+
+        public ObservableCollection<Excercise> F2
+        {
+            get
+            {
+
+                return new ObservableCollection<Excercise>();
+
+            }
+
+        }
 
 
-       public event PropertyChangedEventHandler PropertyChanged;
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
        [NotifyPropertyChangedInvocator]
        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

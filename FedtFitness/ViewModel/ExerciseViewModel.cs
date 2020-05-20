@@ -10,6 +10,7 @@ using Windows.Security.Authentication.Web.Core;
 using FedtFitness.Annotations;
 using FedtFitness.Model;
 
+
 namespace FedtFitness.ViewModel
 {
     class ExerciseViewModel : INotifyPropertyChanged
@@ -22,6 +23,11 @@ namespace FedtFitness.ViewModel
         public int Muscles_ID { get; set; }
         public string Description { get; set; }
 
+        //ObservableCollection<Excercise> F1 = new ObservableCollection<Excercise>();
+        public ObservableCollection<Excercise> F1 { get; set; }
+
+
+
         private Excercise _selectedExercise;
 
         public ExerciseViewModel()
@@ -29,10 +35,18 @@ namespace FedtFitness.ViewModel
             exerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
             _selectedExercise = new Excercise(Exercise_ID, ExName, Length, Equipment_ID, Muscles_ID, Description);
             AllExercises = exerciseCatalogSingleton.Exercises;
+
+
+
         }
+
+
+
+
 
         //private Exercise _clickedExercise;
         //public Exercise ClickedExercise { get; set; }
+        //public IList<object> SelectedItemsList { get; }
 
         public Excercise SelectedExercise
         {
@@ -68,5 +82,7 @@ namespace FedtFitness.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
     }
 }

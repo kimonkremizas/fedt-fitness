@@ -35,8 +35,12 @@ namespace FedtFitness.Model
             }
         }
 
-
-
+        public string _name;
+        public string ExName
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
 
     }
 }
