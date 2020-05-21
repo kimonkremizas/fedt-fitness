@@ -1,0 +1,55 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FedtFitness.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:FedtFitness.ViewModel"
+    xmlns:Custom="using:Microsoft.Xaml.Interactivity" xmlns:Custom1="using:Microsoft.Xaml.Interactions.Core"
+    x:Class="FedtFitness.View.Login"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <viewModel:RALVM/>
+    </Page.DataContext>
+    <Grid Background="BurlyWood">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" Text="Login" FontSize="50" Foreground="Brown" FontWeight="ExtraBold"/>
+            <TextBlock Name="Message" FontSize="30"/>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,15">
+                <TextBlock Text="Username" FontSize="30" FontWeight="Bold" Foreground="DarkCyan"/>
+                <TextBox PlaceholderText="Insert your username"  FontSize="25" Text="{Binding Username}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <TextBlock Text="Password" FontSize="30" FontWeight="Bold" Foreground="DarkMagenta"/>
+                <PasswordBox PlaceholderText="Insert your password" FontSize="25" 
+                             TextReadingOrder="{Binding Password}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Login" FontSize="27" Margin="0,0,20,0" Click="Loginbutton"/>
+                <Button Content="Register" FontSize="27" Margin="20,0,0,0" Click="Registerbutton"/>
+            </StackPanel>
+
+
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Page>
