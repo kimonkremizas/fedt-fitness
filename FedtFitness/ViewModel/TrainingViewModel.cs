@@ -15,6 +15,9 @@ namespace FedtFitness.ViewModel
 {
     class TrainingViewModel : INotifyPropertyChanged
     {
+        // I am currently using a copy of the Exercises Collection from ExerciseCatalogSingleton
+        // until I manage to use the F1 Collection from FiltersViewModel
+
         public ObservableCollection<Excercise> Excercises { get; set; }
         //private ExerciseCatalogSingleton _exerciseCatalogSingleton;
         private ExerciseCatalogSingleton _selectedExercise;

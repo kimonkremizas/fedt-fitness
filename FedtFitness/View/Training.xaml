@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:FedtFitness.ViewModel"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -68,11 +69,19 @@
                     Content="Next">
             </Button>
         </StackPanel>
+        
+
+        <!--I am currently using a copy of the Exercises Collection from ExerciseCatalogSingleton
+        until I manage to use the F1 Collection from FiltersViewModel-->
 
 
         <StackPanel Style="{StaticResource StackPanelStyle}"
-                        Grid.Column="3" Grid.Row="2" Orientation="Horizontal">
+                        Grid.Column="3" Grid.Row="2" 
+                        Orientation="Horizontal"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch">
             <ListView x:Name="TrainingListView"
+                      Header="List of Exercises"
                       ItemsSource="{Binding Excercises}"
                       SelectedItem="{Binding SelectedExercise, Mode=TwoWay}"
                       VerticalAlignment="Stretch">
@@ -80,7 +89,6 @@
                     <DataTemplate>
                         <StackPanel>
                             <TextBlock x:Name="TrainingTextBlock"
-                                       Margin="20,20,20,20" 
                                        VerticalAlignment="Center"
                                        FontSize="18"
                                        Text="{Binding ExName}"/>
@@ -93,20 +101,23 @@
 
 
 
-        <StackPanel Grid.Column="2" Grid.Row="2">
-            <TextBlock   Text="{Binding ElementName=TrainingTextBlock, Path=Text}"/>
+        <StackPanel Style="{StaticResource StackPanelStyle}" 
+                    Grid.Column="2" Grid.Row="2" 
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch">
+            <TextBlock   Text="Exercise Description" 
+                         HorizontalAlignment="Center" 
+                         FontSize="24"/>
         </StackPanel>
 
-        <StackPanel>
-
-        </StackPanel>
-
-        <StackPanel>
-
-        </StackPanel>
-
-        <StackPanel>
-
+        <StackPanel Style="{StaticResource StackPanelStyle}" 
+                    Grid.Column="2" Grid.Row="1" 
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch">
+            <TextBlock   Text="50% Completed" 
+                         HorizontalAlignment="Center" 
+                         FontSize="24"/>
+            <ProgressBar Width="400" Value="50" Margin="10,10,10,10"/>
         </StackPanel>
 
 

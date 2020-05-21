@@ -54,10 +54,14 @@
             
         </StackPanel>
         <!-- List part -->
+
+<!--I have not successfully managed to store the SelectedItem from this list to ExerciseViewModel or ExerciseCatalogSingleton-->
+
         <StackPanel Grid.Column="0" VerticalAlignment="Stretch">
             <ListView x:Name="ListView1"
                       SelectionMode="Multiple"
-                      ItemsSource="{Binding F1}" 
+                      ItemsSource="{Binding F1, Mode=TwoWay}" 
+                      SelectedItem="{Binding abs.SelectedExercise}"
                       VerticalAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate>
