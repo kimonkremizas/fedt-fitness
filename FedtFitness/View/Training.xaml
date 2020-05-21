@@ -76,11 +76,16 @@
 
         <StackPanel Style="{StaticResource StackPanelStyle}"
                         Grid.Column="3" Grid.Row="2" 
-                        Orientation="Horizontal"
+                        Orientation="Vertical"
                         VerticalAlignment="Stretch"
                         HorizontalAlignment="Stretch">
+            <TextBlock HorizontalAlignment="Center" 
+                       FontSize="20" 
+                       FontWeight="Bold">
+                <Run Text="Number of Exercises: "/>
+                <Run Text="{Binding Excercises.Count}"/>
+            </TextBlock>
             <ListView x:Name="TrainingListView"
-                      Header="List of Exercises"
                       ItemsSource="{Binding Excercises}"
                       SelectedItem="{Binding SelectedExercise, Mode=TwoWay}"
                       VerticalAlignment="Stretch">
