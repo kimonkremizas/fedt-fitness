@@ -73,7 +73,7 @@
         <StackPanel Style="{StaticResource StackPanelStyle}"
                         Grid.Column="3" Grid.Row="2" Orientation="Horizontal">
             <ListView x:Name="TrainingListView"
-                      ItemsSource="{Binding Exercises}"
+                      ItemsSource="{Binding Excercises}"
                       SelectedItem="{Binding SelectedExercise, Mode=TwoWay}"
                       VerticalAlignment="Stretch">
                 <ListView.ItemTemplate>
@@ -93,9 +93,8 @@
 
 
 
-        <StackPanel>
-            <TextBlock    Text="{Binding SelectedExercise.ExName}" 
-                          FontSize="25"/>
+        <StackPanel Grid.Column="2" Grid.Row="2">
+            <TextBlock   Text="{Binding ElementName=TrainingTextBlock, Path=Text}"/>
         </StackPanel>
 
         <StackPanel>

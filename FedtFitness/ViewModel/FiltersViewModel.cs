@@ -103,19 +103,6 @@ namespace FedtFitness.ViewModel
 
         }
 
-        public ObservableCollection<Excercise> F2
-        {
-            get
-            {
-
-                return new ObservableCollection<Excercise>();
-
-            }
-
-        }
-
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 

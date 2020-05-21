@@ -9,21 +9,30 @@ using System.Threading.Tasks;
 using FedtFitness.Annotations;
 using FedtFitness.Model;
 using FedtFitness.Persistency;
+using Windows.UI.Xaml.Controls;
 
 namespace FedtFitness.ViewModel
 {
     class TrainingViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Excercise> Exercises { get; set; }
-        private ExerciseCatalogSingleton _exerciseCatalogSingleton;
-
-
+        public ObservableCollection<Excercise> Excercises { get; set; }
+        //private ExerciseCatalogSingleton _exerciseCatalogSingleton;
+        private ExerciseCatalogSingleton _selectedExercise;
+        public ExerciseCatalogSingleton SelectedExercise
+        {
+            get { return _selectedExercise; }
+            set
+            {
+                _selectedExercise= value;
+                OnPropertyChanged();
+            }
+        }
 
 
         public TrainingViewModel()
         {
-            Exercises = new ObservableCollection<Excercise>();
-            Exercises = new ObservableCollection<Excercise>(GenericFedtWebAPI<Excercise>.getAll("api/Excercises"));
+            Excercises = new ObservableCollection<Excercise>();
+            Excercises = new ObservableCollection<Excercise>(GenericFedtWebAPI<Excercise>.getAll("api/Excercises"));
 
         }
 
