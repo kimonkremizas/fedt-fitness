@@ -76,7 +76,7 @@
                                     <ColumnDefinition Width="150"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <FontIcon Grid.Column="0" FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xEB91;"></FontIcon>
-                                <TextBlock Grid.Column="1" Text="Workout equipment" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Grid.Column="1" Text="Workout filters" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center">
                                 </TextBlock>
                             </Grid>
                         </Button>
@@ -89,7 +89,7 @@
                                     <ColumnDefinition Width="150"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <FontIcon Grid.Column="0" FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE762;"></FontIcon>
-                                <TextBlock Grid.Column="1" Text="Workout muscle group" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Grid.Column="1" Text="Training" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center">
                                 </TextBlock>
                             </Grid>
                         </Button>
