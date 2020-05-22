@@ -55,13 +55,13 @@ namespace FedtFitness.ViewModel
         {
             get
             {
-                if (Excercises == null)
+                if (AllExcercises == null)
                 {
                     return 0;
                 }
                 else
                 {
-                    return 22m/Excercises.Count*100m;
+                    return 22m/AllExcercises.Count*100m;
                 }
             }
         }
