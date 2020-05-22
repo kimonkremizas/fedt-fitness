@@ -41,25 +41,21 @@ namespace FedtFitness.ViewModel
                 OnPropertyChanged(nameof(SelectedExercise));
             }
         }
-
+        public ObservableCollection<Excercise> AllExcercises { get; set; }
 
         public TrainingViewModel()
         {
-            Excercises = new ObservableCollection<Excercise>();
-            Excercises = new ObservableCollection<Excercise>(GenericFedtWebAPI<Excercise>.getAll("api/Excercises"));
-
-            
 
             ExerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
             _selectedExercise = new Excercise(Exercise_ID, ExName, Length, Equipment_ID, Muscles_ID, Description);
-           
+            AllExcercises = ExerciseCatalogSingleton.Exercises;
         }
 
         public decimal ProgressPercentage
         {
             get
             {
-                if (Excercises.Count == 0)
+                if (Excercises == null)
                 {
                     return 0;
                 }

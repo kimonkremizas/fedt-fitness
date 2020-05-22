@@ -84,10 +84,10 @@
                        FontSize="20" 
                        FontWeight="Bold">
                 <Run Text="Number of Exercises: "/>
-                <Run Text="{Binding Excercises.Count}"/>
+                <Run Text="{Binding AllExcercises.Count}"/>
             </TextBlock>
             <ListView x:Name="TrainingListView"
-                      ItemsSource="{Binding Excercises, Mode=OneWay}"
+                      ItemsSource="{Binding AllExcercises, Mode=OneWay}"
                       SelectedItem="{Binding SelectedExercise, Mode=TwoWay}"
                       Height="420">
                 <ListView.ItemTemplate>
