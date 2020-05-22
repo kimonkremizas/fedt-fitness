@@ -121,12 +121,23 @@
             <TextBlock Style="{StaticResource TextBlockStyle}"  
                 Text="{Binding SelectedExercise.Description}"
                 TextWrapping="Wrap"/>
+
+            <!--Exercise Muscled_ID-->
+
             <TextBlock Style="{StaticResource TextBlockStyle}"  
-                       Text="{Binding SelectedExercise.Muscles_ID}"
-                       TextWrapping="Wrap"/>
+                       TextWrapping="Wrap">
+                       <Run Text="ID of Muscles used:"/>
+                       <Run Text="{Binding SelectedExercise.Muscles_ID}"/>
+            </TextBlock>
+
+            <!--Exercise Equipment_ID-->
+
             <TextBlock Style="{StaticResource TextBlockStyle}"  
-                       Text="{Binding SelectedExercise.Equipment_ID}"
-                       TextWrapping="Wrap"/>
+                       TextWrapping="Wrap">
+                <Run Text="ID of Equipment used:"/>
+                <Run Text="{Binding SelectedExercise.Equipment_ID}"/>
+            </TextBlock>
+
         </StackPanel>
         
         <!--Progress Bar-->
