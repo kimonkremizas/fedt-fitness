@@ -19,15 +19,24 @@ namespace FedtFitness.ViewModel
         // until I manage to use the F1 Collection from FiltersViewModel
 
         public ObservableCollection<Excercise> Excercises { get; set; }
+
+        public int Exercise_ID { get; set; }
+        public string ExName { get; set; }
+        public int Length { get; set; }
+        public int Equipment_ID { get; set; }
+        public int Muscles_ID { get; set; }
+        public string Description { get; set; }
+        public ExerciseCatalogSingleton ExerciseCatalogSingleton { get; set; }
+
         //private ExerciseCatalogSingleton _exerciseCatalogSingleton;
-        private ExerciseCatalogSingleton _selectedExercise;
-        public ExerciseCatalogSingleton SelectedExercise
+        private Excercise _selectedExercise;
+        public Excercise SelectedExercise
         {
             get { return _selectedExercise; }
             set
             {
                 _selectedExercise= value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(SelectedExercise));
             }
         }
 
@@ -37,9 +46,28 @@ namespace FedtFitness.ViewModel
             Excercises = new ObservableCollection<Excercise>();
             Excercises = new ObservableCollection<Excercise>(GenericFedtWebAPI<Excercise>.getAll("api/Excercises"));
 
+
+            ExerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
+            _selectedExercise = new Excercise(Exercise_ID, ExName, Length, Equipment_ID, Muscles_ID, Description);
+           
         }
 
-
+        public decimal ProgressPercentage
+        {
+            get
+            {
+                if (Excercises.Count == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 22m/Excercises.Count*100m;
+                }
+            }
+        }
+      
+        
 
 
         public event PropertyChangedEventHandler PropertyChanged;

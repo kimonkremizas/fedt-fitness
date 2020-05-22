@@ -30,10 +30,11 @@
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
-
-
-
-
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Margin" Value="5,5,5,5"/>
+        </Style>
     </Page.Resources>
 
 
@@ -86,16 +87,19 @@
                 <Run Text="{Binding Excercises.Count}"/>
             </TextBlock>
             <ListView x:Name="TrainingListView"
-                      ItemsSource="{Binding Excercises}"
+                      ItemsSource="{Binding Excercises, Mode=OneWay}"
                       SelectedItem="{Binding SelectedExercise, Mode=TwoWay}"
-                      VerticalAlignment="Stretch">
+                      Height="420">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
+                            
                             <TextBlock x:Name="TrainingTextBlock"
                                        VerticalAlignment="Center"
                                        FontSize="18"
                                        Text="{Binding ExName}"/>
+                            <!--<Button Name="MyButton" Background="Transparent">
+                            </Button>-->
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -108,10 +112,21 @@
         <StackPanel Style="{StaticResource StackPanelStyle}" 
                     Grid.Column="2" Grid.Row="2" 
                     VerticalAlignment="Stretch"
-                    HorizontalAlignment="Stretch">
+                    HorizontalAlignment="Stretch"
+                    Orientation="Vertical">
+                    
             <TextBlock   Text="Exercise Description" 
                          HorizontalAlignment="Center" 
                          FontSize="24"/>
+            <TextBlock Style="{StaticResource TextBlockStyle}"  
+                Text="{Binding SelectedExercise.Description}"
+                TextWrapping="Wrap"/>
+            <TextBlock Style="{StaticResource TextBlockStyle}"  
+                       Text="{Binding SelectedExercise.Muscles_ID}"
+                       TextWrapping="Wrap"/>
+            <TextBlock Style="{StaticResource TextBlockStyle}"  
+                       Text="{Binding SelectedExercise.Equipment_ID}"
+                       TextWrapping="Wrap"/>
         </StackPanel>
         
         <!--Progress Bar-->
@@ -120,10 +135,13 @@
                     Grid.Column="2" Grid.Row="1" 
                     VerticalAlignment="Stretch"
                     HorizontalAlignment="Stretch">
-            <TextBlock   Text="50% Completed" 
-                         HorizontalAlignment="Center" 
-                         FontSize="24"/>
-            <ProgressBar Width="400" Value="50" Margin="10,10,10,10"/>
+            <TextBlock   HorizontalAlignment="Center" 
+                         FontSize="24">
+                <Run Text="{Binding ProgressPercentage}"/>
+                <Run Text="% Completed"/>
+            </TextBlock>
+            <ProgressBar Width="400" Value="{Binding ProgressPercentage, UpdateSourceTrigger=PropertyChanged}" 
+                         Margin="10,10,10,10"/>
         </StackPanel>
 
 
