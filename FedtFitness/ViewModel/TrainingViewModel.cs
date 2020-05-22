@@ -30,18 +30,6 @@ namespace FedtFitness.ViewModel
         public string Description { get; set; }
         public ExerciseCatalogSingleton ExerciseCatalogSingleton { get; set; }
 
-        //private ExerciseCatalogSingleton _exerciseCatalogSingleton;
-        private Excercise _selectedExercise;
-        public Excercise SelectedExercise
-        {
-            get { return _selectedExercise; }
-            set
-            {
-                _selectedExercise= value;
-                OnPropertyChanged(nameof(SelectedExercise));
-            }
-        }
-        public ObservableCollection<Excercise> AllExcercises { get; set; }
 
         public TrainingViewModel()
         {
@@ -51,6 +39,27 @@ namespace FedtFitness.ViewModel
             AllExcercises = ExerciseCatalogSingleton.Exercises;
         }
 
+
+
+
+
+        private Excercise _selectedExercise;
+        public Excercise SelectedExercise
+        {
+            get
+            {
+                return _selectedExercise;
+            }
+            set
+            {
+                _selectedExercise= value;
+                OnPropertyChanged(nameof(SelectedExercise));
+            }
+        }
+        public ObservableCollection<Excercise> AllExcercises { get; set; }
+
+
+
         public decimal ProgressPercentage
         {
             get
@@ -58,6 +67,7 @@ namespace FedtFitness.ViewModel
                 if (AllExcercises == null)
                 {
                     return 0;
+
                 }
                 else
                 {
