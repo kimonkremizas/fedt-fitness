@@ -15,8 +15,10 @@ namespace FedtFitness.ViewModel
 {
     class TrainingViewModel : INotifyPropertyChanged
     {
+        public FiltersViewModel FVM { get; set; }
         // I am currently using a copy of the Exercises Collection from ExerciseCatalogSingleton
         // until I manage to use the F1 Collection from FiltersViewModel
+
 
         public ObservableCollection<Excercise> Excercises { get; set; }
 
@@ -46,6 +48,7 @@ namespace FedtFitness.ViewModel
             Excercises = new ObservableCollection<Excercise>();
             Excercises = new ObservableCollection<Excercise>(GenericFedtWebAPI<Excercise>.getAll("api/Excercises"));
 
+            
 
             ExerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
             _selectedExercise = new Excercise(Exercise_ID, ExName, Length, Equipment_ID, Muscles_ID, Description);
@@ -66,8 +69,8 @@ namespace FedtFitness.ViewModel
                 }
             }
         }
-      
-        
+
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;
