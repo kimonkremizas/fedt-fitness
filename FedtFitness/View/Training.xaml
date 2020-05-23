@@ -9,7 +9,7 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="White">
 
 
     <Page.DataContext>
@@ -29,6 +29,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="WhiteSmoke"/>
         </Style>
         <Style x:Key="TextBlockStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="18"/>
@@ -37,6 +38,7 @@
         </Style>
     </Page.Resources>
 
+    
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -76,7 +78,7 @@
 
 
         <StackPanel Style="{StaticResource StackPanelStyle}"
-                        Grid.Column="3" Grid.Row="2" 
+                        Grid.Column="1" Grid.Row="2" 
                         Orientation="Vertical"
                         VerticalAlignment="Stretch"
                         HorizontalAlignment="Stretch">
@@ -107,6 +109,8 @@
         </StackPanel>
 
 
+        <!--Selected Exercise Details-->
+
         <!--Exercise Description-->
 
         <StackPanel Style="{StaticResource StackPanelStyle}" 
@@ -114,8 +118,8 @@
                     VerticalAlignment="Stretch"
                     HorizontalAlignment="Stretch"
                     Orientation="Vertical">
-                    
-            <TextBlock   Text="Exercise Description" 
+
+            <TextBlock   Text="Selected Exercise Details" 
                          HorizontalAlignment="Center" 
                          FontSize="24"/>
             <TextBlock Style="{StaticResource TextBlockStyle}"  
