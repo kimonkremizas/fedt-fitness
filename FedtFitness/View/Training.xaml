@@ -71,7 +71,7 @@
 
         <!--Training List of Exercises ListVIew-->
 
-        <!--I am currently using a copy of the Exercises Collection from ExerciseCatalogSingleton
+        <!--I am currently using the AllExercises Collection from ExerciseCatalogSingleton
         until I manage to use the F1 Collection from FiltersViewModel-->
 
 

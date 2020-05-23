@@ -15,12 +15,12 @@ namespace FedtFitness.ViewModel
 {
     class TrainingViewModel : INotifyPropertyChanged
     {
-        public FiltersViewModel FVM { get; set; }
-        // I am currently using a copy of the Exercises Collection from ExerciseCatalogSingleton
+
+        // I am currently using the AllExercises Collection from ExerciseCatalogSingleton
         // until I manage to use the F1 Collection from FiltersViewModel
 
-
-        public ObservableCollection<Excercise> Excercises { get; set; }
+        public ObservableCollection<Excercise> AllExcercises { get; set; }
+        public ExerciseCatalogSingleton ExerciseCatalogSingleton { get; set; }
 
         public int Exercise_ID { get; set; }
         public string ExName { get; set; }
@@ -28,20 +28,13 @@ namespace FedtFitness.ViewModel
         public int Equipment_ID { get; set; }
         public int Muscles_ID { get; set; }
         public string Description { get; set; }
-        public ExerciseCatalogSingleton ExerciseCatalogSingleton { get; set; }
-
-
+        
         public TrainingViewModel()
         {
-
             ExerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
             _selectedExercise = new Excercise(Exercise_ID, ExName, Length, Equipment_ID, Muscles_ID, Description);
             AllExcercises = ExerciseCatalogSingleton.Exercises;
         }
-
-
-
-
 
         private Excercise _selectedExercise;
         public Excercise SelectedExercise
@@ -56,9 +49,6 @@ namespace FedtFitness.ViewModel
                 OnPropertyChanged(nameof(SelectedExercise));
             }
         }
-        public ObservableCollection<Excercise> AllExcercises { get; set; }
-
-
 
         public decimal ProgressPercentage
         {
@@ -75,9 +65,6 @@ namespace FedtFitness.ViewModel
                 }
             }
         }
-
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
         [NotifyPropertyChangedInvocator]

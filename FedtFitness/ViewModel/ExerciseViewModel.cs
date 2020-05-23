@@ -15,7 +15,10 @@ namespace FedtFitness.ViewModel
 {
     class ExerciseViewModel : INotifyPropertyChanged
     {
-        public ExerciseCatalogSingleton exerciseCatalogSingleton { get; set; }
+        public ObservableCollection<Excercise> AllExcercises { get; set; }
+        public ObservableCollection<Excercise> F1 { get; set; }
+        public ExerciseCatalogSingleton ExerciseCatalogSingleton { get; set; }
+
         public int Exercise_ID { get; set; }
         public string ExName { get; set; }
         public int Length { get; set; }
@@ -23,31 +26,14 @@ namespace FedtFitness.ViewModel
         public int Muscles_ID { get; set; }
         public string Description { get; set; }
 
-        //ObservableCollection<Excercise> F1 = new ObservableCollection<Excercise>();
-        public ObservableCollection<Excercise> F1 { get; set; }
-
-
-
-        private Excercise _selectedExercise;
-
         public ExerciseViewModel()
         {
-            exerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
+            ExerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
             _selectedExercise = new Excercise(Exercise_ID, ExName, Length, Equipment_ID, Muscles_ID, Description);
-            AllExercises = exerciseCatalogSingleton.Exercises;
-
-
-
+            AllExcercises = ExerciseCatalogSingleton.Exercises;
         }
-
-
-
-
-
-        //private Exercise _clickedExercise;
-        //public Exercise ClickedExercise { get; set; }
-        //public IList<object> SelectedItemsList { get; }
-
+        
+        private Excercise _selectedExercise;
         public Excercise SelectedExercise
         {
             get
@@ -57,26 +43,13 @@ namespace FedtFitness.ViewModel
             set
             {
                 _selectedExercise = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(SelectedExercise));
             }
         }
 
-        public ObservableCollection<Excercise> AllExercises { get; set; }
-
-        //public ObservableCollection<Exercise> SelectedListViewItemCollection
-        //{
-        //    get
-        //    {
-
-
-        //        IEnumerable<Exercise> filtered = AllExercises.Where(ex => ex.Equipment_ID == SelectedEquipment.Equipment_ID);
-        //        return new ObservableCollection<Exercise>(filtered);
-        //    }
-        //}
 
 
         public event PropertyChangedEventHandler PropertyChanged;
-
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
