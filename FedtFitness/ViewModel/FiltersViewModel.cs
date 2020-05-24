@@ -104,6 +104,22 @@ namespace FedtFitness.ViewModel
         }
 
 
+
+        private Excercise _selectedExercise;
+        public Excercise SelectedExercise
+        {
+            get
+            {
+                return _selectedExercise;
+            }
+            set
+            {
+                _selectedExercise = value;
+                OnPropertyChanged(nameof(SelectedExercise));
+            }
+        }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
 
        [NotifyPropertyChangedInvocator]

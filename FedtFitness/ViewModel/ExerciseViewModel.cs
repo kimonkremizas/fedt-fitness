@@ -29,23 +29,9 @@ namespace FedtFitness.ViewModel
         public ExerciseViewModel()
         {
             ExerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
-            _selectedExercise = new Excercise(Exercise_ID, ExName, Length, Equipment_ID, Muscles_ID, Description);
             AllExcercises = ExerciseCatalogSingleton.Exercises;
         }
-        
-        private Excercise _selectedExercise;
-        public Excercise SelectedExercise
-        {
-            get
-            {
-                return _selectedExercise;
-            }
-            set
-            {
-                _selectedExercise = value;
-                OnPropertyChanged(nameof(SelectedExercise));
-            }
-        }
+       
 
 
 

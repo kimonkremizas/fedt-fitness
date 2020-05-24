@@ -1,7 +1,7 @@
 ﻿<Page
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:FedtFitness.View"
+    xmlns:local="using:FedtFitness"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:FedtFitness.ViewModel"
@@ -116,7 +116,7 @@
             </TextBlock>
             <ListView x:Name="TrainingListView"
                       ItemsSource="{Binding F1, Mode=OneWay}"
-                      SelectedItem="{Binding abs.SelectedExercise, Mode=TwoWay}"
+                      SelectedItem="{Binding SelectedExercise, Mode=TwoWay}"
                       Height="420">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -142,11 +142,14 @@
                     HorizontalAlignment="Stretch"
                     Orientation="Vertical">
 
+            
+
+
             <TextBlock   Text="Selected Exercise Details" 
                          HorizontalAlignment="Center" 
                          FontSize="24"/>
             <TextBlock Style="{StaticResource TextBlockStyle}"  
-                       Text="{Binding abs.SelectedExercise.Description}"
+                       Text="{Binding SelectedExercise.Description}"
                        TextWrapping="Wrap"/>
 
             <!--Exercise Muscled_ID-->
@@ -154,7 +157,7 @@
             <TextBlock Style="{StaticResource TextBlockStyle}"  
                        TextWrapping="Wrap">
                 <Run Text="ID of Muscles used:"/>
-                <Run Text="{Binding abs.SelectedExercise.Muscles_ID}"/>
+                <Run Text="{Binding SelectedExercise.Muscles_ID}"/>
             </TextBlock>
 
             <!--Exercise Equipment_ID-->
@@ -162,7 +165,7 @@
             <TextBlock Style="{StaticResource TextBlockStyle}"  
                        TextWrapping="Wrap">
                 <Run Text="ID of Equipment used:"/>
-                <Run Text="{Binding abs.SelectedExercise.Equipment_ID}"/>
+                <Run Text="{Binding SelectedExercise.Equipment_ID}"/>
             </TextBlock>
 
         </StackPanel>
