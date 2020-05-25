@@ -15,7 +15,6 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using FedtFitness.Model;
 using FedtFitness.ViewModel;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -34,7 +33,7 @@ namespace FedtFitness.View
 
         FiltersViewModel evm = new FiltersViewModel();
 
-        
+
     }
 
 

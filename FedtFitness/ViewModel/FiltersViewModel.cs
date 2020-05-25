@@ -26,8 +26,8 @@ namespace FedtFitness.ViewModel
             _selectedMuscleGroup = new MuscleGroup(Muscles_ID, MGName);
             AllMuscleGroups = MuscleGroupCatalogSingleton.MuscleGroups;
 
-            ecs = ExerciseCatalogSingleton.Instance;
-
+            ExerciseCatalogSingleton = ExerciseCatalogSingleton.Instance;
+            AllExcercises = ExerciseCatalogSingleton.Exercises;
 
         }
 
@@ -75,18 +75,13 @@ namespace FedtFitness.ViewModel
             }
         }
 
-        public ExerciseViewModel abs { get; set; }
+
 
         //REFERENCES
 
-        public ExerciseCatalogSingleton ecs { get; set; }
-        public ObservableCollection<Excercise> AllExercises
-        {
-            get
-            {
-                return ecs.Exercises;
-            }
-        }
+        public ExerciseCatalogSingleton ExerciseCatalogSingleton { get; set; }
+        public ObservableCollection<Excercise> AllExcercises { get; set; }
+
 
         
         //CHECK IF ANY EXERCISES APPLY BOTH FILTERS AND CREATE FILTERED COLLECTION
@@ -95,7 +90,7 @@ namespace FedtFitness.ViewModel
        {
            get
            {
-               IEnumerable<Excercise>  filtered= AllExercises.Where(ex => ex.Equipment_ID == SelectedEquipment.Equipment_ID
+               IEnumerable<Excercise>  filtered= AllExcercises.Where(ex => ex.Equipment_ID == SelectedEquipment.Equipment_ID
                                                                          && ex.Muscles_ID == SelectedMuscleGroup.Muscles_ID);
                 return new ObservableCollection<Excercise>(filtered);
 

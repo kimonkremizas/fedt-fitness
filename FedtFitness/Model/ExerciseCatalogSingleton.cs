@@ -35,6 +35,23 @@ namespace FedtFitness.Model
             }
         }
 
+
+        //public ObservableCollection<Excercise> TrainingExcercises
+        //{
+        //    get
+        //    {
+        //        ObservableCollection<Excercise> TrainingExcercises = new ObservableCollection<Excercise>();
+        //        foreach (Excercise i in F1)
+        //        {
+        //            TrainingExcercises.Add(i);
+        //        }
+        //        return TrainingExcercises;
+        //    }
+
+
+        //}
+
+
         public string _name;
         public string ExName
         {
@@ -42,6 +59,5 @@ namespace FedtFitness.Model
             set { _name = value; }
         }
 
-        public bool IsSelected { get; internal set; }
     }
 }

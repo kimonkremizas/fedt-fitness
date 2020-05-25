@@ -11,7 +11,7 @@
 
 
     <Page.DataContext>
-        <viewModel:TrainingViewModel/>
+        <viewModel:FiltersViewModel/>
     </Page.DataContext>
 
 
