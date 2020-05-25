@@ -8,7 +8,7 @@ using FedtFitness.Persistency;
 
 namespace FedtFitness.Model
 {
-    class MuscleGroupCatalogSingleton
+    public class MuscleGroupCatalogSingleton
     {
         public ObservableCollection<MuscleGroup> MuscleGroups { get; set; }
         private static MuscleGroupCatalogSingleton _instance;

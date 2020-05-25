@@ -13,7 +13,7 @@ using FedtFitness.View;
 
 namespace FedtFitness.ViewModel
 {
-    class FiltersViewModel : INotifyPropertyChanged
+    public class FiltersViewModel : INotifyPropertyChanged
     {
 
         public FiltersViewModel()

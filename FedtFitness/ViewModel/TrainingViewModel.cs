@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace FedtFitness.ViewModel
 {
-    class TrainingViewModel : INotifyPropertyChanged
+    public class TrainingViewModel : INotifyPropertyChanged
     {
 
         // I am currently using the AllExercises Collection from ExerciseCatalogSingleton

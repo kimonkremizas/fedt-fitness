@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FedtFitness.Model
 {
-    class Excercise
+    public class Excercise
     {
         public int _exerciseId;
         public string _name;

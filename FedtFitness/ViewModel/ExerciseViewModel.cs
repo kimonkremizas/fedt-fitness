@@ -13,7 +13,7 @@ using FedtFitness.Model;
 
 namespace FedtFitness.ViewModel
 {
-    class ExerciseViewModel : INotifyPropertyChanged
+    public class ExerciseViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Excercise> AllExcercises { get; set; }
         public ObservableCollection<Excercise> F1 { get; set; }
