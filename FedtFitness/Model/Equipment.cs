@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FedtFitness.Model
 {
-    public class Equipment
+    class Equipment
     {
         private int _eqId;
         private string _eqName;

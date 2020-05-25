@@ -9,7 +9,7 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
     mc:Ignorable="d"
-    Background="White">
+    Background="#272d2d">
 
 
     <Page.DataContext>
@@ -20,6 +20,7 @@
     <Page.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
             <Setter Property="Width" Value="100"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Margin" Value="5,5,5,5"/>
@@ -27,9 +28,6 @@
         <Style x:Key="StackPanelStyle" TargetType="StackPanel">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Background" Value="WhiteSmoke"/>
         </Style>
         <Style x:Key="TextBlockStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="18"/>
@@ -41,9 +39,17 @@
     
 
     <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="../Assets/test.jpg" 
+                        Stretch="UniformToFill" 
+                        Opacity="0.6"/>
+        </Grid.Background>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.05*"/>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="0.2*"/>
@@ -61,7 +67,11 @@
         <!--Back and Next Button-->
 
         <StackPanel Style="{StaticResource StackPanelStyle}"
-                    Grid.Column="3" Grid.Row="3" Orientation="Horizontal">
+                    Background="#B8C5D6"
+                    Opacity="0.8"
+                    Grid.Column="1" 
+                    Grid.Row="3" 
+                    Orientation="Horizontal">
             <Button Style="{StaticResource ButtonStyle}" 
                     Content="Back">
             </Button>
@@ -78,11 +88,14 @@
 
 
         <StackPanel Style="{StaticResource StackPanelStyle}"
+                    Background="#B8C5D6"
+                    Opacity="0.8"
                         Grid.Column="1" Grid.Row="2" 
                         Orientation="Vertical"
                         VerticalAlignment="Stretch"
                         HorizontalAlignment="Stretch">
-            <TextBlock HorizontalAlignment="Center" 
+            <StackPanel Margin="20,20,20,20">
+                <TextBlock HorizontalAlignment="Center" 
                        FontSize="20" 
                        FontWeight="Bold">
                 <Run Text="Number of Exercises: "/>
@@ -106,6 +119,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+                </StackPanel>
         </StackPanel>
 
 
@@ -114,21 +128,24 @@
         <!--Exercise Description-->
 
         <StackPanel Style="{StaticResource StackPanelStyle}" 
-                    Grid.Column="2" Grid.Row="2" 
+                    Background="#B8C5D6"
+                    Opacity="0.8"
+                    Grid.Column="3" Grid.Row="2" 
                     VerticalAlignment="Stretch"
                     HorizontalAlignment="Stretch"
                     Orientation="Vertical">
-
-            <TextBlock   Text="Selected Exercise Details" 
+            <StackPanel Margin="20,20,20,20">
+            <TextBlock   Text="Current Exercise Details" 
                          HorizontalAlignment="Center" 
-                         FontSize="24"/>
-            <TextBlock Style="{StaticResource TextBlockStyle}"  
+                         FontSize="24"
+                         FontWeight="Bold"/>
+            <TextBlock Style="{StaticResource TextBlockStyle}"
                 Text="{Binding SelectedExercise.Description}"
                 TextWrapping="Wrap"/>
 
             <!--Exercise Muscled_ID-->
 
-            <TextBlock Style="{StaticResource TextBlockStyle}"  
+            <TextBlock Style="{StaticResource TextBlockStyle}"
                        TextWrapping="Wrap">
                        <Run Text="ID of Muscles used:"/>
                        <Run Text="{Binding SelectedExercise.Muscles_ID}"/>
@@ -136,22 +153,24 @@
 
             <!--Exercise Equipment_ID-->
 
-            <TextBlock Style="{StaticResource TextBlockStyle}"  
+            <TextBlock Style="{StaticResource TextBlockStyle}" 
                        TextWrapping="Wrap">
                 <Run Text="ID of Equipment used:"/>
                 <Run Text="{Binding SelectedExercise.Equipment_ID}"/>
             </TextBlock>
-
+            </StackPanel>
         </StackPanel>
         
         <!--Progress Bar-->
 
         <StackPanel Style="{StaticResource StackPanelStyle}" 
-                    Grid.Column="2" Grid.Row="1" 
+                    Background="#B8C5D6"
+                    Opacity="0.8"
+                    Grid.Column="3" Grid.Row="1" 
                     VerticalAlignment="Stretch"
                     HorizontalAlignment="Stretch">
             <TextBlock   HorizontalAlignment="Center" 
-                         FontSize="24">
+                         FontSize="24" FontWeight="Bold">
                 <Run Text="{Binding ProgressPercentage}"/>
                 <Run Text="% Completed"/>
             </TextBlock>
