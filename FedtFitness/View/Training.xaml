@@ -7,9 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:FedtFitness.ViewModel"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-    mc:Ignorable="d"
-    Background="#272d2d">
+   mc:Ignorable="d">
 
 
     <Page.DataContext>
@@ -21,13 +19,15 @@
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="ExtraBold"/>
-            <Setter Property="Width" Value="100"/>
             <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Margin" Value="5,5,5,5"/>
+            <Setter Property="BorderBrush" Value="#2e294e"/>
+            <Setter Property="BorderThickness" Value="0.8"/>
         </Style>
         <Style x:Key="StackPanelStyle" TargetType="StackPanel">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="#2e294e"/>
+            <Setter Property="BorderThickness" Value="0.8"/>
         </Style>
         <Style x:Key="TextBlockStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="18"/>
@@ -64,21 +64,6 @@
         </Grid.RowDefinitions>
 
 
-        <!--Back and Next Button-->
-
-        <StackPanel Style="{StaticResource StackPanelStyle}"
-                    Background="#B8C5D6"
-                    Opacity="0.8"
-                    Grid.Column="1" 
-                    Grid.Row="3" 
-                    Orientation="Horizontal">
-            <Button Style="{StaticResource ButtonStyle}" 
-                    Content="Back">
-            </Button>
-            <Button Style="{StaticResource ButtonStyle}" 
-                    Content="Next">
-            </Button>
-        </StackPanel>
 
 
         <!--Training List of Exercises ListVIew-->
@@ -178,6 +163,34 @@
                          Margin="10,10,10,10"/>
         </StackPanel>
 
+        <!-- Complete workout BUtton-->
+
+        <StackPanel Style="{StaticResource StackPanelStyle}"
+                    Grid.Column="3" 
+                    Grid.Row="3">
+            <Button Style="{StaticResource ButtonStyle}" 
+                    Background="#B8C5D6"
+                    Opacity="0.8"
+                    Content="Complete workout">
+            </Button>
+        </StackPanel>
+
+
+        <!--Back and Next Button-->
+
+        <StackPanel Style="{StaticResource StackPanelStyle}"
+                    Background="#B8C5D6"
+                    Opacity="0.8"
+                    Grid.Column="1" 
+                    Grid.Row="3" 
+                    Orientation="Horizontal">
+                <Button Style="{StaticResource ButtonStyle}" 
+                    Content="Back">
+            </Button>
+            <Button Style="{StaticResource ButtonStyle}" 
+                    Content="Next">
+            </Button>
+        </StackPanel>
 
     </Grid>
 </Page>

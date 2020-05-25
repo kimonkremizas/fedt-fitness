@@ -9,8 +9,8 @@
     xmlns:Custom="using:Microsoft.Xaml.Interactivity" 
     xmlns:Custom1="using:Microsoft.Xaml.Interactions.Core"
     x:Class="FedtFitness.View.WorkoutEquipment"
-    mc:Ignorable="d"
-    Background="#272d2d">
+
+    mc:Ignorable="d">
 
 
     <Page.DataContext>
@@ -22,11 +22,14 @@
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="ExtraBold"/>
             <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Margin" Value="5,5,5,5"/>
+            <Setter Property="BorderBrush" Value="#2e294e"/>
+            <Setter Property="BorderThickness" Value="0.8"/>
         </Style>
         <Style x:Key="StackPanelStyle" TargetType="StackPanel">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="#2e294e"/>
+            <Setter Property="BorderThickness" Value="0.8"/>
         </Style>
         <Style x:Key="TextBlockStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="18"/>
@@ -78,6 +81,7 @@
             <!--Equipment Filter-->
 
         <StackPanel Style="{StaticResource StackPanelStyle}"
+                    BorderThickness="0"
                     Grid.Column="3"  Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <ComboBox x:Name="EquipmentCombobox"
@@ -187,10 +191,9 @@
         <StackPanel Style="{StaticResource StackPanelStyle}"
                     Grid.Column="3" 
                     Grid.Row="3">
-            <Button Style="{StaticResource ButtonStyle}" 
+            <Button Style="{StaticResource ButtonStyle}"
                     Background="#B8C5D6"
                     Opacity="0.8"
-
                     Content="Start workout">
             </Button>
         </StackPanel>
