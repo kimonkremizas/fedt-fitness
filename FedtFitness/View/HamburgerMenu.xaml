@@ -82,7 +82,7 @@
                         </Button>
 
 
-                        <Button Grid.Row="4" Click="Training_Click" Style="{StaticResource ButtonStyle}">
+                        <Button Visibility="Collapsed" Grid.Row="4" Click="Training_Click" Style="{StaticResource ButtonStyle}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition  Width="50"></ColumnDefinition>

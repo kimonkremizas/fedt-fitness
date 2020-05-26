@@ -194,12 +194,8 @@
             <Button Style="{StaticResource ButtonStyle}"
                     Background="#B8C5D6"
                     Opacity="0.8"
-                    Content="Start workout">
-                <Custom:Interaction.Behaviors>
-                    <Custom1:EventTriggerBehavior EventName="Click">
-                        <Custom1:NavigateToPageAction TargetPage="FedtFitness.View.Training"/>
-                    </Custom1:EventTriggerBehavior>
-                </Custom:Interaction.Behaviors>
+                    Content="Start workout"
+                    Click="Training_Click">
             </Button>
         </StackPanel>
 

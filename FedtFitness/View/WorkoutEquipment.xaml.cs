@@ -33,6 +33,10 @@ namespace FedtFitness.View
 
         FiltersViewModel evm = new FiltersViewModel();
 
+        private void Training_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Training), e);
+        }
 
     }
 
