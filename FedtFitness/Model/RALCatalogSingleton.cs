@@ -19,6 +19,8 @@ namespace FedtFitness.Model
         private RALCatalogSingleton()
         {
             rAl = new ObservableCollection<RegisterAndLogin>();
+            rAl = new ObservableCollection<RegisterAndLogin>(registerWebApiAsync.getAll());
+            //rAl.Add(new RegisterAndLogin("admin1", "admin1", "asdfg@gmail.com"));
         }
 
         public static RALCatalogSingleton Instance
@@ -30,7 +32,7 @@ namespace FedtFitness.Model
             }
         }
 
-        GenericFedtWebAPI<RegisterAndLogin> registerWebApiAsync= new GenericFedtWebAPI<RegisterAndLogin>(serverURL, url);
+        GenericFedtWebAPI<RegisterAndLogin> registerWebApiAsync= new GenericFedtWebAPI<RegisterAndLogin>(url);
         
 
         public RegisterAndLogin CurrentUser { get; set; }
@@ -47,7 +49,7 @@ namespace FedtFitness.Model
             {
                 if (v.Username == username && v.Password == password)
                 {
-                    CurrentUser = rAl.FirstOrDefault(data => data.Username == username && data.Password == password);
+                    CurrentUser = rAl.FirstOrDefault(ad => ad.Username == username);
                     status = true;
                 }
             }
@@ -55,14 +57,6 @@ namespace FedtFitness.Model
            
         }
 
-        public void LogIn(string username, string password)
-        {
-            CurrentUser = rAl.FirstOrDefault(data => data.Username == username && data.Password == password);
-        }
 
-        public void LogOut()
-        {
-            CurrentUser = null;
-        }
     }
 }

@@ -18,15 +18,26 @@ namespace FedtFitness.ViewModel
     class RALVM : INotifyPropertyChanged
     {
         private RALCatalogSingleton ralCatalogSingleton { get; set; }
+
+        //public int Idregister { get; set; }
         public string Username
         {
-            get { return _username;}
-            set { _username = value; } }
+            get { return _username; }
+            set
+            {
+                _username = value;
+                OnPropertyChanged(nameof(Username));
+            }
+        }
 
         public string Password
         {
             get { return _password; }
-            set { _password = value; }
+            set
+            {
+                _password = value;
+                OnPropertyChanged(nameof(Password));
+            }
         }
 
         public string Email { get; set; }
@@ -49,12 +60,13 @@ namespace FedtFitness.ViewModel
         }
         public void AddUser()
         {
-            ralCatalogSingleton.Register(new RegisterAndLogin(Username, Password, Email));
+            int counter = ralCatalogSingleton.rAl.Count;
+            ralCatalogSingleton.Register(new RegisterAndLogin(counter+1, Username, Password, Email));
         }
 
-        public bool CanNavigate()
+        public bool CanNavigate(string Username, string Password)
         {
-          return ralCatalogSingleton.LoginCheck(Username, Password);
+            return ralCatalogSingleton.LoginCheck(Username, Password);
         }
 
 

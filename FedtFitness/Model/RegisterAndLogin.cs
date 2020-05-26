@@ -8,6 +8,7 @@ namespace FedtFitness.Model
 {
     class RegisterAndLogin
     {
+        private int _idregister;
         private string _username;
         private string _password;
         private string _email;
@@ -17,11 +18,18 @@ namespace FedtFitness.Model
 
         }
 
-        public RegisterAndLogin(string usn, string pass, string email)
+        public RegisterAndLogin(int idregister,string usn, string pass, string email)
         {
+            _idregister = idregister;
             _username = usn;
             _password = pass;
             _email = email;
+        }
+
+        public int Idregister
+        {
+            get { return _idregister; }
+            set { _idregister = value; }
         }
 
         public string Username

@@ -11,13 +11,14 @@ namespace FedtFitness.Persistency
 {
     class GenericFedtWebAPI<T> where T:class
     {
-        private HttpClientHandler handler;
-        private  HttpClient client;
-        private  string _url;
-        public GenericFedtWebAPI(string serverURL, string url)
+        HttpClientHandler handler;
+        HttpClient client;
+        string _url;
+        const string serverURL = "http://localhost:63830/";
+        public GenericFedtWebAPI(string url)
         {
             handler = new HttpClientHandler();
-            handler.UseDefaultCredentials = true;
+            handler.UseDefaultCredentials = true; 
             client = new HttpClient(handler);
             client.BaseAddress = new Uri(serverURL);
             client.DefaultRequestHeaders.Clear();
@@ -25,48 +26,44 @@ namespace FedtFitness.Persistency
             _url = url;
         }
 
-
-        public async Task<List<T>> getAll()
+        public List<T> getAll()
         {
-            //const string serverURL = "http://localhost:63830/";
-            using (client)
-            {
-                
+
+           
+            
+
                 try
                 {
-                    var response = await client.GetAsync(_url);
+                    var response = client.GetAsync(_url).Result;
                     response.EnsureSuccessStatusCode();
                     string data = response.Content.ReadAsStringAsync().Result;
-                    List<T> gList = JsonConvert.DeserializeObject<List<T>>(data);
-                    return gList;
+                    List<T> cList = JsonConvert.DeserializeObject<List<T>>(data);
+                    return cList;
                 }
                 catch (Exception ex)
                 {
                     return new List<T>();
                 }
-            }
+            
+
         }
 
-        public  async void createNewOne(T obj)
+        public async void createNewOne(T obj)
         {
-            using (client)
-            {
-
+            
                 try
                 {
                     string data = JsonConvert.SerializeObject(obj);
                     StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
-                    var response = await client.PostAsync(_url,content);
+                    var response = await client.PostAsync(_url, content);
                     response.EnsureSuccessStatusCode();
-                   
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                    Console.WriteLine(ex.Message);
                 }
-            }
+          
         }
-
 
 
     }

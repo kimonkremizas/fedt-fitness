@@ -32,9 +32,12 @@ namespace FedtFitness.View
 
         private void Loginbutton(object sender, RoutedEventArgs e)
         {
-            if (access.CanNavigate())
+           string username = Usernamebox.Text;
+           string password = PasswordBox.Password;
+            if (access.CanNavigate(username, password))
             {
                // Content.Navigate(typeof(MainPage), e);
+               Message.Text = "You logged in";
             }
             else
             {
@@ -44,7 +47,7 @@ namespace FedtFitness.View
 
         private void Registerbutton(object sender, RoutedEventArgs e)
         {
-            
+            Frame.Navigate(typeof(BlankPage1));
         }
     }
 }

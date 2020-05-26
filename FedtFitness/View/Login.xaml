@@ -18,38 +18,21 @@
             <TextBlock Name="Message" FontSize="30"/>
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,15">
                 <TextBlock Text="Username" FontSize="30" FontWeight="Bold" Foreground="DarkCyan"/>
-                <TextBox PlaceholderText="Insert your username"  FontSize="25" Text="{Binding Username}"/>
+                <TextBox Name="Usernamebox"  PlaceholderText="Insert your username"  FontSize="25" 
+                         Text="{Binding Path=Username, Mode=TwoWay}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
                 <TextBlock Text="Password" FontSize="30" FontWeight="Bold" Foreground="DarkMagenta"/>
-                <PasswordBox PlaceholderText="Insert your password" FontSize="25" 
-                             TextReadingOrder="{Binding Password}"/>
+                <PasswordBox Name="PasswordBox"
+                    PlaceholderText="Insert your password" FontSize="25" 
+                             Password="{Binding Password, Mode=TwoWay}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Login" FontSize="27" Margin="0,0,20,0" Click="Loginbutton"/>
+                <Button Content="Login" FontSize="27" Margin="0,0,20,0" Click="Loginbutton" Command="{Binding LoginCommand}"/>
                 <Button Content="Register" FontSize="27" Margin="20,0,0,0" Click="Registerbutton"/>
             </StackPanel>
 
 
         </StackPanel>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </Grid>
 </Page>

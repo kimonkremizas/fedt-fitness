@@ -48,7 +48,7 @@
                 <PasswordBox
                     PlaceholderText="Insert a Password.."
                     FontSize="25"
-                    TextReadingOrder="{Binding Password, Mode=TwoWay}"
+                    Password="{Binding Password, Mode=TwoWay}"
                 />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,0,0,10">
