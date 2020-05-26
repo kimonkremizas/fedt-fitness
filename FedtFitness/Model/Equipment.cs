@@ -12,11 +12,6 @@ namespace FedtFitness.Model
         private int _eqId;
         private string _eqName;
 
-        //public Equipment()
-        //{
-
-        //}
-
         public Equipment(int equipmentId, string name)
         {
             _eqId = equipmentId;

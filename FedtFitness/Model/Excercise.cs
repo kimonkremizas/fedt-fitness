@@ -15,11 +15,6 @@ namespace FedtFitness.Model
         public int _musclesId;
         public string _description;
 
-        //public Exercise()
-        //{
-            
-        //}
-
         public Excercise( int exerciseId, string name, int? length, int equipmentId, int musclesId,
             string description)
         {

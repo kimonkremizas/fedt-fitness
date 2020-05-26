@@ -114,9 +114,7 @@
 
         <!-- List part -->
 
-        <!--I have not successfully managed to store the SelectedItem from this list to ExerciseViewModel or ExerciseCatalogSingleton-->
-
-        <StackPanel Style="{StaticResource StackPanelStyle}"
+            <StackPanel Style="{StaticResource StackPanelStyle}"
                     Background="#B8C5D6"
                     Opacity="0.8"
                     Grid.Column="1" Grid.Row="2" 
@@ -140,7 +138,7 @@
 
                             <TextBlock x:Name="TrainingTextBlock"
                                        VerticalAlignment="Center"
-                                       FontSize="18"
+                                       FontSize="14"
                                        Text="{Binding ExName}"/>
                         </StackPanel>
                     </DataTemplate>
@@ -163,26 +161,11 @@
             <StackPanel Margin="20,20,20,20">
                 <TextBlock   Text="Selected Exercise Details" 
                          HorizontalAlignment="Center" 
-                         FontSize="24"/>
+                         FontSize="24"
+                         FontWeight="Bold"/>
             <TextBlock Style="{StaticResource TextBlockStyle}"  
                        Text="{Binding SelectedExercise.Description}"
                        TextWrapping="Wrap"/>
-
-            <!--Exercise Muscled_ID-->
-
-            <TextBlock Style="{StaticResource TextBlockStyle}"  
-                       TextWrapping="Wrap">
-                <Run Text="ID of Muscles used:"/>
-                <Run Text="{Binding SelectedExercise.Muscles_ID}"/>
-            </TextBlock>
-
-            <!--Exercise Equipment_ID-->
-
-            <TextBlock Style="{StaticResource TextBlockStyle}"  
-                       TextWrapping="Wrap">
-                <Run Text="ID of Equipment used:"/>
-                <Run Text="{Binding SelectedExercise.Equipment_ID}"/>
-            </TextBlock>
             </StackPanel>
         </StackPanel>
 

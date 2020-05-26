@@ -11,10 +11,6 @@ namespace FedtFitness.Model
         public int _muscleId;
         public string _name;
 
-        //public MuscleGroup()
-        //{
-            
-        //}
         public MuscleGroup(int muscleId, string name)
         {
             _muscleId = muscleId;

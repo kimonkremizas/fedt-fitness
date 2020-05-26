@@ -68,10 +68,6 @@
 
         <!--Training List of Exercises ListVIew-->
 
-        <!--I am currently using the AllExercises Collection from ExerciseCatalogSingleton
-        until I manage to use the F1 Collection from FiltersViewModel-->
-
-
         <StackPanel Style="{StaticResource StackPanelStyle}"
                     Background="#B8C5D6"
                     Opacity="0.8"
@@ -87,7 +83,8 @@
                 <Run Text="{Binding ExerciseCatalogSingleton.TrainingExcercises.Count}"/>
             </TextBlock>
             <ListView x:Name="TrainingListView"
-                      ItemsSource="{Binding ExerciseCatalogSingleton.TrainingExcercises, Mode=OneWay}"
+                      ItemsSource="{Binding ExerciseCatalogSingleton.TrainingExcercises, 
+                      Mode=OneWay}"
                       SelectedItem="{Binding SelectedExercise, Mode=TwoWay}"
                       Height="420">
                 <ListView.ItemTemplate>
@@ -128,7 +125,18 @@
                 Text="{Binding SelectedExercise.Description}"
                 TextWrapping="Wrap"/>
 
-            <!--Exercise Muscled_ID-->
+
+            <!-- Mark as done Button-->
+
+            <Button Style="{StaticResource ButtonStyle}" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Background="#B8C5D6"
+                    Opacity="0.8"
+                    Content="Mark as Done">
+            </Button>
+
+                <!--Exercise Muscled_ID--><!--
 
             <TextBlock Style="{StaticResource TextBlockStyle}"
                        TextWrapping="Wrap">
@@ -136,13 +144,13 @@
                        <Run Text="{Binding SelectedExercise.Muscles_ID}"/>
             </TextBlock>
 
-            <!--Exercise Equipment_ID-->
+            --><!--Exercise Equipment_ID--><!--
 
             <TextBlock Style="{StaticResource TextBlockStyle}" 
                        TextWrapping="Wrap">
                 <Run Text="ID of Equipment used:"/>
                 <Run Text="{Binding SelectedExercise.Equipment_ID}"/>
-            </TextBlock>
+            </TextBlock>-->
             </StackPanel>
         </StackPanel>
         
@@ -165,17 +173,22 @@
                          Margin="10,10,10,10"/>
         </StackPanel>
 
-        <!-- Complete workout BUtton-->
+        <!-- Complete workout Button-->
 
         <StackPanel Style="{StaticResource StackPanelStyle}"
                     Grid.Column="3" 
-                    Grid.Row="3">
+                    Grid.Row="3"
+                    Orientation="Horizontal">
             <Button Style="{StaticResource ButtonStyle}" 
                     Background="#B8C5D6"
                     Opacity="0.8"
                     Content="Complete workout">
             </Button>
+
+
         </StackPanel>
+
+
 
 
         <!--Back and Next Button-->
