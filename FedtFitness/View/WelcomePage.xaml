@@ -18,7 +18,7 @@
                 VerticalAlignment="Center"
                 Click="Register_Click" />
 
-        <Button Content="Register" 
+        <Button Content="Login" 
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 Click="Login_Click" />
