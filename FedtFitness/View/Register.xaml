@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="FedtFitness.View.Register"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FedtFitness.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:fedtFitness="using:FedtFitness"
+    xmlns:viewModel="using:FedtFitness.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <viewModel:RALVM/>
+    </Page.DataContext>
+        <Grid Background="BlueViolet">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Width="500" Height="100">
+                <TextBlock
+                   Text="Register" 
+                   FontSize="50" 
+                   FontWeight="ExtraBold"
+                   TextAlignment="Center"
+                   Foreground="Aqua"
+                />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                <TextBlock
+                    Text="Username"
+                    FontSize="30"
+                    Foreground="YellowGreen"
+                    FontWeight="Bold"
+                    TextAlignment="Center"
+                    Margin="0,0,40,0 "/>
+                <TextBox
+                    PlaceholderText="Insert an username."
+                    FontSize="25"
+                    Text="{Binding Username, Mode=TwoWay}"
+                    />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,0,0,10">
+                <TextBlock
+                    Text="Password"
+                    FontSize="30"
+                    Foreground="YellowGreen"
+                    FontWeight="Bold"
+                    TextAlignment="Center"
+                    Margin="0,0,40,0 "/>
+                <PasswordBox
+                    PlaceholderText="Insert a Password.."
+                    FontSize="25"
+                    Password="{Binding Password, Mode=TwoWay}"
+                />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,0,0,10">
+                <TextBlock
+                    Text="E-mail"
+                    FontSize="30"
+                    Foreground="YellowGreen"
+                    FontWeight="Bold"
+                    TextAlignment="Center"
+                    Margin="-20,0,80,0 "/>
+                <TextBox
+                    PlaceholderText="Insert an e-mail.."
+                    FontSize="25"
+                    Text="{Binding Email, Mode=TwoWay}"
+                />
+            </StackPanel>
+            <Button Name="register" Content="Register" FontSize="50" Width="375" Height="99" Command="{Binding AddUserCommand}"/>
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Page>
