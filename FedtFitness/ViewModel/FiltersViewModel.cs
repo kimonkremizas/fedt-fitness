@@ -115,6 +115,30 @@ namespace FedtFitness.ViewModel
             }
         }
 
+
+        //private decimal progressPercentage = 3m / ExerciseCatalogSingleton.Instance.TrainingExcercises.Count * 100m;
+
+        //public decimal ProgressPercentage
+        //{
+        //    get
+        //    {
+        //        if (ExerciseCatalogSingleton.TrainingExcercises == null)
+        //        {
+        //            return 0;
+        //        }
+        //        else
+        //        {
+        //            return progressPercentage;
+        //        }
+        //    }
+
+        //    set
+        //    {
+        //        progressPercentage = value;
+        //        OnPropertyChanged(nameof(progressPercentage));
+        //    }
+
+            
         private Excercise _selectedExercise;
         public Excercise SelectedExercise
         {
