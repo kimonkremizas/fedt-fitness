@@ -12,7 +12,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using FedtFitness.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -21,13 +20,21 @@ namespace FedtFitness.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Register : Page
+    public sealed partial class WelcomePage : Page
     {
-        public Register()
+        public WelcomePage()
         {
             this.InitializeComponent();
-            this.DataContext = rr;
         }
-        RALVM rr = new RALVM();
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Register));
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Login));
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace FedtFitness.View
 
         private void Registerbutton(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(BlankPage1));
+            Frame.Navigate(typeof(Register));
         }
     }
 }
