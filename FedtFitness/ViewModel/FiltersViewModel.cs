@@ -92,13 +92,28 @@ namespace FedtFitness.ViewModel
            {
                IEnumerable<Excercise>  filtered= AllExcercises.Where(ex => ex.Equipment_ID == SelectedEquipment.Equipment_ID
                                                                          && ex.Muscles_ID == SelectedMuscleGroup.Muscles_ID);
+               ExerciseCatalogSingleton.TrainingExcercises = new ObservableCollection<Excercise>(filtered.ToList());
                 return new ObservableCollection<Excercise>(filtered);
 
            }
 
         }
 
+        public decimal ProgressPercentage
+        {
+            get
+            {
+                if (ExerciseCatalogSingleton.TrainingExcercises == null)
+                {
+                    return 0;
 
+                }
+                else
+                {
+                    return 3m / ExerciseCatalogSingleton.TrainingExcercises.Count * 100m;
+                }
+            }
+        }
 
         private Excercise _selectedExercise;
         public Excercise SelectedExercise

@@ -50,21 +50,7 @@ namespace FedtFitness.ViewModel
             }
         }
 
-        public decimal ProgressPercentage
-        {
-            get
-            {
-                if (AllExcercises == null)
-                {
-                    return 0;
 
-                }
-                else
-                {
-                    return 22m/AllExcercises.Count*100m;
-                }
-            }
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         [NotifyPropertyChangedInvocator]

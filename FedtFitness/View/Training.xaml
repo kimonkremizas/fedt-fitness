@@ -84,10 +84,10 @@
                        FontSize="20" 
                        FontWeight="Bold">
                 <Run Text="Number of Exercises: "/>
-                <Run Text="{Binding AllExcercises.Count}"/>
+                <Run Text="{Binding ExerciseCatalogSingleton.TrainingExcercises.Count}"/>
             </TextBlock>
             <ListView x:Name="TrainingListView"
-                      ItemsSource="{Binding AllExcercises, Mode=OneWay}"
+                      ItemsSource="{Binding ExerciseCatalogSingleton.TrainingExcercises, Mode=OneWay}"
                       SelectedItem="{Binding SelectedExercise, Mode=TwoWay}"
                       Height="420">
                 <ListView.ItemTemplate>
@@ -159,7 +159,9 @@
                 <Run Text="{Binding ProgressPercentage}"/>
                 <Run Text="% Completed"/>
             </TextBlock>
-            <ProgressBar Width="400" Value="{Binding ProgressPercentage, UpdateSourceTrigger=PropertyChanged}" 
+            <ProgressBar Width="400" 
+                         Value="{Binding ProgressPercentage, 
+                         UpdateSourceTrigger=PropertyChanged}" 
                          Margin="10,10,10,10"/>
         </StackPanel>
 
