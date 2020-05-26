@@ -37,7 +37,8 @@ namespace FedtFitness.View
             if (access.CanNavigate(username, password))
             {
                // Content.Navigate(typeof(MainPage), e);
-               Message.Text = "You logged in";
+               //Message.Text = "You logged in";
+               Frame.Navigate(typeof(MainPage));
             }
             else
             {
